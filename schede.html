@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schede — catalogo grezzo — Ivan Liuzzo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.schede-body{ font-size:10px; padding:16px; }
+.scheda-block{ margin-bottom:26px; border-top:1px solid #000; padding-top:6px; }
+.scheda-head{ display:flex; gap:10px; font-size:11px; font-weight:600; margin-bottom:2px; }
+.scheda-meta{ color:#888; font-size:10px; margin-bottom:8px; }
+.scheda-grid{ display:flex; flex-wrap:wrap; gap:4px; }
+.scheda-thumb{ width:64px; }
+.scheda-thumb .box{ width:64px; height:64px; border:1px solid #000; background:#f0f0f0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.scheda-thumb img{ max-width:100%; max-height:100%; display:block; }
+.scheda-thumb .fig{ font-size:8px; color:#888; text-align:center; margin-top:2px; word-break:break-all; }
+</style>
+</head>
+<body class="archive">
+  <header class="top-bar">
+    <a href="archive.html" class="back">&larr; back to archive</a>
+  </header>
+  <main class="schede-body" id="schede-root"></main>
+  <script src="schede-data.js"></script>
+  <script>
+    const root = document.getElementById("schede-root");
+    SCHEDE.forEach(s => {
+      const block = document.createElement("div");
+      block.className = "scheda-block";
+
+      const head = document.createElement("div");
+      head.className = "scheda-head";
+      head.textContent = `${s.scheda} — ${s.categoria || ""} ${s.area || ""} ${s.anno || ""}`;
+      block.appendChild(head);
+
+      const meta = document.createElement("div");
+      meta.className = "scheda-meta";
+      meta.textContent = [s.autore, s.titolo].filter(Boolean).join(" — ");
+      block.appendChild(meta);
+
+      const grid = document.createElement("div");
+      grid.className = "scheda-grid";
+      s.images.forEach(im => {
+        const t = document.createElement("div");
+        t.className = "scheda-thumb";
+        const box = document.createElement("div");
+        box.className = "box";
+        if(im.file){
+          const img = document.createElement("img");
+          img.src = `images/schede/${im.file}`;
+          img.alt = im.label || "";
+          img.onerror = () => { img.style.display = "none"; };
+          box.appendChild(img);
+        }
+        const fig = document.createElement("div");
+        fig.className = "fig";
+        fig.textContent = im.label || "";
+        t.appendChild(box);
+        t.appendChild(fig);
+        grid.appendChild(t);
+      });
+      block.appendChild(grid);
+      root.appendChild(block);
+    });
+  </script>
+</body>
+</html>
