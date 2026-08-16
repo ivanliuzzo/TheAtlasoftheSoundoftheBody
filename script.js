@@ -9,6 +9,49 @@ function itemKey(catKey, nucleusId, itemId){
   return `${catKey}__${nucleusId}__${itemId}`;
 }
 
+function getRowEl(key){
+  return document.querySelector(`.item-row[data-key="${CSS.escape(key)}"]`);
+}
+
+function findGroupMembers(groupName, excludeKey){
+  const out = [];
+  ORDER.forEach(catKey => {
+    const cat = ARCHIVE[catKey];
+    if(!cat) return;
+    cat.nuclei.forEach(nucleus => {
+      nucleus.items.forEach(item => {
+        if(item.group === groupName){
+          const key = itemKey(catKey, nucleus.id, item.id);
+          if(key !== excludeKey) out.push({ catKey, nucleus, item, key });
+        }
+      });
+    });
+  });
+  return out;
+}
+
+// Generic collapsible: toggle text + box, label prefixed with +/-
+function buildToggle(label, text, extraClass){
+  const wrap = document.createDocumentFragment();
+
+  const toggle = document.createElement("div");
+  toggle.className = "reflection-toggle" + (extraClass ? " " + extraClass : "");
+  toggle.textContent = `+ ${label}`;
+
+  const box = document.createElement("div");
+  box.className = "reflection-box" + (extraClass ? " " + extraClass + "-box" : "");
+  box.textContent = text;
+
+  toggle.addEventListener("click", () => {
+    box.classList.toggle("open");
+    toggle.textContent = (box.classList.contains("open") ? "− " : "+ ") + label;
+  });
+
+  wrap.appendChild(toggle);
+  wrap.appendChild(box);
+  return wrap;
+}
+
 function buildColumns(){
   ORDER.forEach(catKey => {
     const cat = ARCHIVE[catKey];
@@ -27,18 +70,25 @@ function buildColumns(){
     catLabel.textContent = cat.label;
     col.appendChild(catLabel);
 
+    // general reflection for this category (collapsible, top of column)
+    if(cat.reflection && cat.reflection.trim()){
+      col.appendChild(buildToggle("reflection", cat.reflection, "cat-reflection"));
+    }
+
     cat.nuclei.forEach(nucleus => {
       const nEl = document.createElement("div");
       nEl.className = "nucleus";
 
+      const hasNote = nucleus.note && nucleus.note.trim().length > 0;
+
       const head = document.createElement("div");
-      head.className = "nucleus-head";
+      head.className = "nucleus-head" + (hasNote ? " has-note" : "");
       const idSpan = document.createElement("span");
       idSpan.className = "n-id";
       idSpan.textContent = nucleus.id;
       const dateSpan = document.createElement("span");
       dateSpan.className = "n-date";
-      dateSpan.textContent = nucleus.dateRange || "";
+      dateSpan.textContent = (nucleus.dateRange || "") + (hasNote ? "  ·  note" : "");
       head.appendChild(idSpan);
       head.appendChild(dateSpan);
       nEl.appendChild(head);
@@ -48,6 +98,18 @@ function buildColumns(){
         sub.className = "nucleus-sub";
         sub.textContent = nucleus.label;
         nEl.appendChild(sub);
+      }
+
+      let noteBox = null;
+      if(hasNote){
+        noteBox = document.createElement("div");
+        noteBox.className = "nucleus-note";
+        noteBox.textContent = nucleus.note;
+        nEl.appendChild(noteBox);
+
+        head.addEventListener("click", () => {
+          noteBox.classList.toggle("open");
+        });
       }
 
       nucleus.items.forEach(item => {
@@ -61,7 +123,7 @@ function buildColumns(){
 
         const capEl = document.createElement("span");
         capEl.className = "i-caption";
-        capEl.textContent = item.caption;
+        capEl.textContent = item.caption + (item.group ? " ⛓" : "");
 
         row.appendChild(idEl);
         row.appendChild(capEl);
@@ -74,6 +136,11 @@ function buildColumns(){
       col.appendChild(nEl);
     });
 
+    // closing reflections for this category (collapsible, bottom of column, always English)
+    if(cat.reflections && cat.reflections.trim()){
+      col.appendChild(buildToggle("reflections", cat.reflections, "cat-closing"));
+    }
+
     columnsEl.appendChild(col);
   });
 }
@@ -85,7 +152,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
     // already open -> close it
     openPanels.get(key).remove();
     openPanels.delete(key);
-    rowEl.classList.remove("active");
+    if(rowEl) rowEl.classList.remove("active");
     return;
   }
 
@@ -98,7 +165,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
   close.addEventListener("click", () => {
     panel.remove();
     openPanels.delete(key);
-    rowEl.classList.remove("active");
+    if(rowEl) rowEl.classList.remove("active");
   });
   panel.appendChild(close);
 
@@ -131,10 +198,35 @@ function togglePanel(catKey, nucleus, item, rowEl){
   panel.appendChild(noteLabel);
 
   const note = document.createElement("div");
-  const hasNote = item.note && item.note.trim().length > 0;
-  note.className = hasNote ? "p-note" : "p-note empty";
-  note.textContent = hasNote ? item.note : "— no note yet —";
+  const hasItemNote = item.note && item.note.trim().length > 0;
+  note.className = hasItemNote ? "p-note" : "p-note empty";
+  note.textContent = hasItemNote ? item.note : "— no note yet —";
   panel.appendChild(note);
+
+  // GRUPPO — related items across categories/nuclei sharing the same group
+  if(item.group){
+    const related = findGroupMembers(item.group, key);
+    if(related.length){
+      const relLabel = document.createElement("div");
+      relLabel.className = "p-note-label p-related-label";
+      relLabel.textContent = `related — ${item.group}`;
+      panel.appendChild(relLabel);
+
+      const relList = document.createElement("div");
+      relList.className = "p-related";
+      related.forEach(r => {
+        const relRow = document.createElement("div");
+        relRow.className = "p-related-item";
+        relRow.textContent = `${r.catKey}/${r.nucleus.id}/${r.item.id} — ${r.item.caption}`;
+        relRow.addEventListener("click", () => {
+          const targetRow = getRowEl(r.key);
+          togglePanel(r.catKey, r.nucleus, r.item, targetRow);
+        });
+        relList.appendChild(relRow);
+      });
+      panel.appendChild(relList);
+    }
+  }
 
   if(item.video){
     const video = document.createElement("video");
@@ -145,9 +237,25 @@ function togglePanel(catKey, nucleus, item, rowEl){
 
   panelsEl.appendChild(panel);
   openPanels.set(key, panel);
-  rowEl.classList.add("active");
+  if(rowEl) rowEl.classList.add("active");
 
   panel.scrollIntoView({ behavior:"smooth", inline:"end", block:"nearest" });
 }
 
+function buildGeneralBlocks(){
+  const introEl = document.getElementById("generalIntro");
+  const closingEl = document.getElementById("generalClosing");
+
+  if(typeof GENERAL_REFLECTION !== "undefined" && GENERAL_REFLECTION && GENERAL_REFLECTION.trim() && introEl){
+    introEl.textContent = GENERAL_REFLECTION;
+    introEl.style.display = "block";
+  }
+
+  if(typeof GENERAL_CLOSING !== "undefined" && GENERAL_CLOSING && GENERAL_CLOSING.trim() && closingEl){
+    closingEl.appendChild(buildToggle("reflections", GENERAL_CLOSING, "general-closing"));
+    closingEl.style.display = "block";
+  }
+}
+
 buildColumns();
+buildGeneralBlocks();
