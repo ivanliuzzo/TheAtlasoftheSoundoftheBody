@@ -145,6 +145,10 @@ function buildColumns(){
   });
 }
 
+function updatePanelsOpenState(){
+  document.body.classList.toggle("panels-open", openPanels.size > 0);
+}
+
 function togglePanel(catKey, nucleus, item, rowEl){
   const key = itemKey(catKey, nucleus.id, item.id);
 
@@ -153,6 +157,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
     openPanels.get(key).remove();
     openPanels.delete(key);
     if(rowEl) rowEl.classList.remove("active");
+    updatePanelsOpenState();
     return;
   }
 
@@ -166,6 +171,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
     panel.remove();
     openPanels.delete(key);
     if(rowEl) rowEl.classList.remove("active");
+    updatePanelsOpenState();
   });
   panel.appendChild(close);
 
@@ -192,16 +198,18 @@ function togglePanel(catKey, nucleus, item, rowEl){
   cap.textContent = item.caption;
   panel.appendChild(cap);
 
-  const noteLabel = document.createElement("div");
-  noteLabel.className = "p-note-label";
-  noteLabel.textContent = "note";
-  panel.appendChild(noteLabel);
-
-  const note = document.createElement("div");
   const hasItemNote = item.note && item.note.trim().length > 0;
-  note.className = hasItemNote ? "p-note" : "p-note empty";
-  note.textContent = hasItemNote ? item.note : "— no note yet —";
-  panel.appendChild(note);
+  if(hasItemNote){
+    const noteLabel = document.createElement("div");
+    noteLabel.className = "p-note-label";
+    noteLabel.textContent = "note";
+    panel.appendChild(noteLabel);
+
+    const note = document.createElement("div");
+    note.className = "p-note";
+    note.textContent = item.note;
+    panel.appendChild(note);
+  }
 
   // GRUPPO — related items across categories/nuclei sharing the same group
   if(item.group){
@@ -238,6 +246,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
   panelsEl.appendChild(panel);
   openPanels.set(key, panel);
   if(rowEl) rowEl.classList.add("active");
+  updatePanelsOpenState();
 
   panel.scrollIntoView({ behavior:"smooth", inline:"end", block:"nearest" });
 }
@@ -252,7 +261,7 @@ function buildGeneralBlocks(){
   }
 
   if(typeof GENERAL_CLOSING !== "undefined" && GENERAL_CLOSING && GENERAL_CLOSING.trim() && closingEl){
-    closingEl.appendChild(buildToggle("reflections", GENERAL_CLOSING, "general-closing"));
+    closingEl.appendChild(buildToggle("Final thoughts", GENERAL_CLOSING, "general-closing"));
     closingEl.style.display = "block";
   }
 }

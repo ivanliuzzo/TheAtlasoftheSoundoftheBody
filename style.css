@@ -45,13 +45,17 @@ body.home{
   line-height:1.8;
 }
 .home-title .l2{ color:var(--gray); }
-.home-link:hover .home-title{ text-decoration:underline; }
+.home-link:hover .home-title{ text-decoration:none; }
 
 /* ---------------- ARCHIVE SHELL ---------------- */
 body.archive{
   min-height:100vh;
-  padding-bottom: 46vh; /* space for the panel strip */
+  padding-bottom: 0;
   font-size:9.5px;
+  transition: padding-bottom 0.2s ease;
+}
+body.archive.panels-open{
+  padding-bottom: 46vh; /* space for the panel strip, only while a panel is open */
 }
 
 .top-bar{
@@ -136,15 +140,18 @@ body.archive{
 
 /* ---------------- PANELS ---------------- */
 .panels{
+  display:none;
   position:fixed;
   left:0; right:0; bottom:0;
   height:44vh;
-  display:flex;
   flex-direction:row;
   overflow-x:auto;
   border-top:1px solid var(--border);
   background:#f6f4ee;
   z-index:10;
+}
+body.archive.panels-open .panels{
+  display:flex;
 }
 .panel{
   flex:0 0 var(--panel-w);
@@ -272,18 +279,23 @@ body.archive{
 }
 .general-closing{
   border-top:1px solid var(--border);
-  padding:16px;
+  padding:28px 16px 40px;
 }
 .general-closing .reflection-toggle{
-  font-size:10px;
+  font-size:16px;
+  font-weight:700;
   border-bottom:none;
   margin-bottom:0;
+  color:#000;
+  letter-spacing:0.01em;
 }
+.general-closing .reflection-toggle:hover{ color:#000; text-decoration:underline; }
 .general-closing .reflection-box{
   border-bottom:none;
-  font-size:10px;
-  line-height:1.7;
+  font-size:10.5px;
+  line-height:1.75;
   max-width:640px;
+  margin-top:12px;
 }
 
 /* ---------------- RESPONSIVE ---------------- */

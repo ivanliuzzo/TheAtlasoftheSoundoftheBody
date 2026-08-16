@@ -6,7 +6,7 @@ const ARCHIVE = {
    {
     "id": "R1",
     "dateRange": "2026-01/02",
-    "note": "La Biblioteca Biomedica di Firenze è stata la prima tappa fisica e il primo momento in cui sono entrato in contatto con il materiale medico, soprattutto del XIX secolo. Ho speso tre giorni interi in cui ho consultato, grazie anche all'assistenza del personale, l'archivio medico, costituito da schede spesso non consultate. Nell'archivio ho potuto accedere ai testi di Marey, Laennec, Einthoven e tanti altri, in originale o in copia tradotta dell'epoca. Poter leggere degli estratti, e vedere la realizzazione di questi libri, mi ha dato diversi spunti, soprattutto in termini di direzione visuale.",
+    "note": "The Biblioteca Biomedica in Florence was the first physical stop and the first moment I came into contact with medical material, mostly from the 19th century. I spent three full days there, consulting, with help from the staff, the medical archive, made up of records that are often left unconsulted. In the archive I could access texts by Marey, Laennec, Einthoven and many others, in the original or in period translated copies. Being able to read excerpts, and see how these books were made, gave me several ideas, especially in terms of visual direction.",
     "items": [
      {
       "id": "#1",
@@ -180,7 +180,7 @@ const ARCHIVE = {
       "id": "#33",
       "date": "2026-01/02",
       "caption": "Biblioteca — archival notes",
-      "note": "Mi servono più materiali. / I need more material.",
+      "note": "I need more material.",
       "img": "33_R1_2026_01_02_biblioteca_archival_notes.jpg"
      }
     ]
@@ -188,7 +188,7 @@ const ARCHIVE = {
    {
     "id": "R2",
     "dateRange": "2026-02/04",
-    "note": "Il testo di Didi-Huberman è stato un forte stimolo per tentare l'approccio Warburg al catalogo di immagini. Il suo modo di scrivere su Warburg mi ha portato a considerare il mio progetto un'estensione, evitando l'imitazione di un processo irripetibile.",
+    "note": "Didi-Huberman's text was a strong push to try the Warburg approach on my image catalogue. The way he writes about Warburg led me to think of my project as an extension, avoiding the imitation of a process that cannot be repeated.",
     "items": [
      {
       "id": "#47",
@@ -279,7 +279,7 @@ const ARCHIVE = {
    {
     "id": "R3",
     "dateRange": "2026-08",
-    "note": "Una nota di lettura sulla teoria dei tessuti/fibra del corpo umano è stata utile a ragionare su una stampa fatta su tessuto: il corpo umano, rappresentato come linea, viene stampato sul tessuto stesso. [Nucleo collocato qui per ordine di montaggio concettuale, non per cronologia stretta: le note risalgono ad agosto, non a febbraio/aprile come R1-R2]",
+    "note": "A reading note on the theory of tissue and fibre in the human body was useful for thinking about a print made on fabric. The human body, represented as a line, is printed onto the fabric itself. [This nucleus sits here for conceptual montage order, not strict chronology: the notes date from August, not February/April like R1-R2]",
     "items": [
      {
       "id": "#34",
@@ -306,7 +306,7 @@ const ARCHIVE = {
       "id": "#37",
       "date": "2026-08",
       "caption": "Reading notes — Warburg, Pathosformel",
-      "note": "Il mio atlas mette in relazione non solo il suono inudibile del corpo. Mette in relazione dei codici nascosti allo sguardo quotidiano. L'unione dei due codici porta ad una tensione dialettica, da un lato, e ad un'operazione salvifica (o potenziale).",
+      "note": "My atlas connects more than just the inaudible sound of the body. It also connects codes hidden from everyday sight. Together, these two codes create a dialectical tension on one hand, and a redemptive operation, or a potential one, on the other.",
       "img": "37_R1_2026_08_reading_notes_warburg_pathos_formula.jpg"
      },
      {
@@ -327,42 +327,42 @@ const ARCHIVE = {
       "id": "#40",
       "date": "2026-08",
       "caption": "Reading notes — objective / subjective vision",
-      "note": "Passaggio dall'osservatore umano alla macchina.",
+      "note": "Shift from the human observer to the machine.",
       "img": "40_R1_2026_08_reading_notes_objective_subjective_vision.jpg"
      },
      {
       "id": "#41",
       "date": "2026-08",
       "caption": "Reading notes — Warburg, \"metodo vivente\", 01",
-      "note": "La linea dimostra che, con la sua grammatica, con il suo gesto o la comprensione della gestualità, apre o suggerisce sistemi di concetti che vanno al di là della sua apparenza estetica. La linea apre alle complessità costruite da gruppi, comunità, società, fungendo più da \"indice\", ovvero ci proietta verso delle aspettative interpretative.",
+      "note": "The line shows that, through its grammar, its gesture, or the understanding of gesture, it opens or suggests systems of concepts that go beyond its aesthetic appearance. The line opens onto the complexity built by groups, communities, societies, acting more like an \"index\", meaning it projects us toward interpretive expectations.",
       "img": "41_R1_2026_08_reading_notes_warburg_metodo_vivente_01.jpg"
      },
      {
       "id": "#42",
       "date": "2026-08",
       "caption": "Reading notes — Warburg, \"metodo vivente\", 02",
-      "note": "La trascrizione, o la notazione dei suoni corporei nella loro forma grafica, nel corso della storia e delle culture ha subito notevoli cambiamenti nell'aspetto superficiale; mentre per quanto riguarda le ragioni, esse variano notevolmente se le osserviamo nell'epoca pre-moderna e poi successivamente. Sebbene la procedura abbia mantenuto la dimensionalità cartesiana, in grado di permetterci una lettura nel tempo e nei parametri definiti (nell'asse verticale), la qualità della linea comporta non solamente una nuova estetica ma un limite nella sua rappresentazione, che comporta uno sguardo specifico sul corpo umano.",
+      "note": "The transcription, or notation, of body sounds in their graphic form has gone through major changes in surface appearance across history and cultures, while the reasons behind those changes vary a lot between the pre-modern era and later periods. Even though the procedure kept its Cartesian dimensionality, letting us read it over time and within defined parameters (on the vertical axis), the quality of the line brings not just a new aesthetic, but also a limit in its representation, which implies a specific gaze on the human body.",
       "img": "42_R1_2026_08_reading_notes_warburg_metodo_vivente_02.jpg"
      },
      {
       "id": "#43",
       "date": "2026-08",
       "caption": "Reading notes — short question",
-      "note": "Quando la medicina ha smesso di utilizzare la musica?",
+      "note": "When did medicine stop using music?",
       "img": "43_R1_2026_08_reading_notes_short_question.jpg"
      },
      {
       "id": "#44",
       "date": "2026-08",
       "caption": "Reading notes — Warburg, book project",
-      "note": "Prova a fare Atlas processivo per forma e layout fisso (tipo libro Tabucchi). Prova a fare diverse figure... prova anche a fare un libro in cui la forma delle figure è... poi tagli il resto... buchi... vai a......",
+      "note": "Try making a processual Atlas with fixed form and layout (like a Tabucchi book). Try making different figures... also try making a book where the shape of the figures is... then cut the rest... holes... go to......",
       "img": "44_R1_2026_08_reading_notes_warburg_book_project.jpg"
      },
      {
       "id": "#45",
       "date": "2026-08",
       "caption": "Reading notes — epistemologia, entrée",
-      "note": "Epistemologia critica.\n\nCodice — Auscultazione: rende auscultabile, rende reale.\n\nGrafici: rendono il suono del corpo classificabile e la malattia diventa riconoscibile se con codice.\n\nAtlas: giustapposizione.",
+      "note": "Critical epistemology.\n\nCode — Auscultation: makes it auscultable, makes it real.\n\nGraphs: make the sound of the body classifiable, and the illness becomes recognizable if coded.\n\nAtlas: juxtaposition.",
       "img": "45_R1_2026_08_reading_notes_epistemologia_entree.jpg"
      },
      {
@@ -377,7 +377,7 @@ const ARCHIVE = {
    {
     "id": "R4",
     "dateRange": "2026-04",
-    "note": "Questo libro, trovato presso la Bibliothek für Gestaltung, mi ha fatto ragionare sulla tipica forma del libro atlas. Il grande formato mi ha spinto a voler testare una misura estesa.",
+    "note": "This book, found at the Bibliothek für Gestaltung, made me think about the typical form of the atlas book. Its large format pushed me to want to test an extended size.",
     "items": [
      {
       "id": "#14",
@@ -405,7 +405,7 @@ const ARCHIVE = {
    {
     "id": "R5",
     "dateRange": "2026-04",
-    "note": "Il gruppo dell'ultrasound è il catalogo su cui ho sperimentato maggiormente, tentando diversi approcci alla rappresentazione delle linee, spesso trattate come texture o come oggetti da comporre e decostruire.",
+    "note": "The ultrasound group is the set of material I experimented with the most, trying different approaches to representing lines, often treated as texture or as objects to compose and deconstruct.",
     "items": [
      {
       "id": "#31",
@@ -420,7 +420,7 @@ const ARCHIVE = {
    {
     "id": "R6",
     "dateRange": "2026-05",
-    "note": "Il Bilderatlas di Warburg diventa un luogo di partenza, di confronto e anche di creazione di una propria visione di realizzazione. L'Atlas parla per pluralità, mentre io ho tentato il contrario.",
+    "note": "Warburg's Bilderatlas becomes a starting point, a point of comparison, and also a place to build my own vision of how to realize the work. The Atlas speaks through plurality, while I tried the opposite.",
     "items": [
      {
       "id": "#29",
@@ -434,7 +434,7 @@ const ARCHIVE = {
    {
     "id": "R7",
     "dateRange": "2026-07",
-    "note": "La visita presso Karlsruhe è stata molto rivelatoria e d'ispirazione. La scelta della stampa su acrilico è avvenuta dopo questa visita.",
+    "note": "The visit to Karlsruhe was very revealing and inspiring. The choice to print on acrylic came after this visit.",
     "items": [
      {
       "id": "#17",
@@ -453,7 +453,7 @@ const ARCHIVE = {
     ]
    }
   ],
-  "reflection": "R è il primo polo in cui ordino mentalmente il percorso di ricerca svolto, riosservando cosa e come sia accaduto. R mi aiuta ad osservare alcune delle questioni che hanno influenzato la pratica e il risultato finale. Gli 8 poli vogliono dare una traccia visiva di un percorso difficile da verbalizzare, fatto da momenti di stasi alternati a momenti intensi. Ogni tappa avrà una breve riflessione e ricostruzione, tentando una chiave di accesso filtrata per metodo. Sebbene all'inizio l'interesse fosse focalizzato sulla rappresentazione della malattia e del suo suono graficizzato, il focus è stato spostato sul suono del corpo, in campo medico e sacro, e su come sia reso visivamente.",
+  "reflection": "R is the first pole where I mentally order the research path I went through, looking back at what happened and how. R helps me observe some of the questions that shaped the practice and the final result. The 8 poles want to give a visual trace of a path that is hard to put into words, made of moments of standstill alternating with intense moments. Each stage has a short reflection and reconstruction, trying an access key filtered by method. Although at the start the interest was focused on the representation of illness and its graphed sound, the focus shifted to the sound of the body, in the medical and sacred field, and how it is rendered visually.",
   "reflections": "Doing research for this project meant spending a lot of time building the catalogue, which took three months to complete, between online and physical archives. While the catalogue was taking shape, the relationship with Warburg's visual method, and later the inspiration from Hennix, pushed me toward a drier language, toward elements that are reduced and decontextualized, but in tension with each other."
  },
  "T": {
@@ -463,7 +463,7 @@ const ARCHIVE = {
    {
     "id": "T1",
     "dateRange": "2026-02/03",
-    "note": "Le immagini riportano le categorie iniziali con cui ho classificato le immagini del mio catalogo — con testo/lettere, espressive, forma, layer, sacro, Catalogazione_immagini_schede. Queste sono state abbandonate subito per un approccio più specifico e meno generico e qualitativo.",
+    "note": "These images show the initial categories I used to classify the images in my catalogue — with text/letters, expressive, shape, layer, sacred, Catalogazione_immagini_schede. They were dropped early on for a more specific approach, less generic and qualitative.",
     "items": [
      {
       "id": "#1",
@@ -512,7 +512,7 @@ const ARCHIVE = {
    {
     "id": "T2",
     "dateRange": "2026-03",
-    "note": "Cut-out senza i materiali (figure) originali.",
+    "note": "Cut-outs without the original materials (figures).",
     "items": [
      {
       "id": "#21",
@@ -547,7 +547,7 @@ const ARCHIVE = {
    {
     "id": "T3",
     "dateRange": "2026-06-28",
-    "note": "Sessione di registrazione, prove con le coppie.",
+    "note": "Recording session, tests with the pairs.",
     "items": [
      {
       "id": "#7",
@@ -561,7 +561,7 @@ const ARCHIVE = {
    {
     "id": "T4",
     "dateRange": "2026-06/07",
-    "note": "Tessuti di prova per la stampa.",
+    "note": "Test fabrics for printing.",
     "items": [
      {
       "id": "#25",
@@ -575,7 +575,7 @@ const ARCHIVE = {
    {
     "id": "T5",
     "dateRange": "2026-07",
-    "note": "Analisi del layout di Warburg.",
+    "note": "Analysis of Warburg's layout.",
     "items": [
      {
       "id": "#20",
@@ -590,7 +590,7 @@ const ARCHIVE = {
    {
     "id": "T6",
     "dateRange": "2026-07",
-    "note": "Blind test, web page. Sito web per la realizzazione dell'esperimento. La pagina comprendeva la possibilità di ascoltare i suoni, e di leggere le regole per la realizzazione grafica.",
+    "note": "Blind test, web page. Website built for the experiment. The page let you listen to the sounds, and read the rules for the graphic realization.",
     "items": [
      {
       "id": "#17",
@@ -617,7 +617,7 @@ const ARCHIVE = {
       "id": "#14",
       "date": "2026-07/08",
       "caption": "Device materials test",
-      "note": "Test di layout con i materiali dei partecipanti al blind test.",
+      "note": "Layout test with materials from the blind test participants.",
       "img": "14_T4_2026_07_08_device_materials_test.jpg"
      },
      {
@@ -632,7 +632,7 @@ const ARCHIVE = {
    {
     "id": "T8",
     "dateRange": "2026-08",
-    "note": "Booklet arrangement e layout. Visualizzazione multipla delle soluzioni e variazioni.",
+    "note": "Booklet arrangement and layout. Multiple visualization of solutions and variations.",
     "items": [
      {
       "id": "#16",
@@ -653,7 +653,7 @@ const ARCHIVE = {
    {
     "id": "T9",
     "dateRange": "2026-08",
-    "note": "Prove di light design, direzione di luce e risposta del materiale alla luce.",
+    "note": "Light design tests, light direction and how the material responds to light.",
     "items": [
      {
       "id": "#8",
@@ -702,7 +702,7 @@ const ARCHIVE = {
    {
     "id": "T10",
     "dateRange": "2026-08",
-    "note": "Prova di stampa su Ultrablack 115g e Lessebo nero 150g.",
+    "note": "Print test on Ultrablack 115g and Lessebo black 150g.",
     "items": [
      {
       "id": "#26",
@@ -749,7 +749,7 @@ const ARCHIVE = {
     ]
    }
   ],
-  "reflection": "In T ho incluso il materiale con cui ho classificato e processato la rappresentazione del suono del corpo. Ho incluso i primi procedimenti di combinazione delle immagini, le fasi di registrazione, la scelta del materiale di stampa, il dispositivo creato per il terzo esperimento.",
+  "reflection": "In T I included the material I used to classify and process the representation of the sound of the body. I included the first procedures for combining images, the recording phases, the choice of print material, and the device built for the third experiment.",
   "reflections": "The process behind what would later become an installation is fairly classical, made of ideas, dummies, tests and trials. Being a fan of Bruno Munari, I recognize myself in his words, where creation is born the moment you activate yourself, test, and react to the limits, your own and the material's. The technical side often clashes with, or reinforces, creative thinking, which then takes physical shape.\n\nUnfortunately, I arrived very late at building and testing materials. Partly because I hadn't defined the final product yet. Partly because I only committed fully to the sound and pairs direction toward the end, between late May and June, and fully convinced from mid-July."
  },
  "S": {
@@ -779,14 +779,14 @@ const ARCHIVE = {
       "id": "#6",
       "date": "2026-04",
       "caption": "Free layout print test — cutting mat overview",
-      "note": "Realizzazione di tavole warburghiane, stampando alcune delle immagini del catalogo. Ritagliando e accostando per valore estetico.",
+      "note": "Making warburgian plates, printing some of the images from the catalogue. Cutting and placing them together for aesthetic value.",
       "img": "6_S2_2026_04_free_layout_print_test_cutting_mat_overview.jpg"
      },
      {
       "id": "#7",
       "date": "2026-04",
       "caption": "Free layout print test — closer detail of the arrangement",
-      "note": "Realizzazione di tavole warburghiane, stampando alcune delle immagini del catalogo. Ritagliando e accostando per valore estetico.",
+      "note": "Making warburgian plates, printing some of the images from the catalogue. Cutting and placing them together for aesthetic value.",
       "img": "7_S2_2026_04_free_layout_print_test_detail_arrangement.jpg"
      }
     ]
@@ -794,7 +794,7 @@ const ARCHIVE = {
    {
     "id": "S2",
     "dateRange": "2026-06",
-    "note": "Sperimentazioni di griglie, layout statici e dinamici, colori, B&W.",
+    "note": "Experiments with grids, static and dynamic layouts, colors, B&W.",
     "items": [
      {
       "id": "#13",
@@ -852,7 +852,7 @@ const ARCHIVE = {
    {
     "id": "S3",
     "dateRange": "2026-06",
-    "note": "Coppie. Prima creazione di coppie di immagini, cercando una similitudine o continuità. Immagini in full bleed o in frame.",
+    "note": "Pairs. First creation of image pairs, looking for a similarity or continuity. Images in full bleed or in frame.",
     "items": [
      {
       "id": "#20",
@@ -971,7 +971,7 @@ const ARCHIVE = {
    {
     "id": "S4",
     "dateRange": "2026-06",
-    "note": "Coppie. Sperimentazione successiva, layout minimo (due elementi, più di due a full). Risposta della pagina al variare del ritmo e della quantità.",
+    "note": "Pairs. Follow-up experimentation, minimal layout (two elements, more than two at full bleed). How the page responds to changes in rhythm and quantity.",
     "items": [
      {
       "id": "#36",
@@ -1000,7 +1000,7 @@ const ARCHIVE = {
    {
     "id": "S5",
     "dateRange": "2026-03",
-    "note": "La prima prova che ho realizzato, una volta terminata la raccolta del catalogo, è stata la creazione di tavole simil-warburghiane ponendo l'attenzione sulla presenza/assenza del passepartout — il frame che delimita l'immagine — e sul colore: immagini nel colore originale o livellate in bianco e nero.",
+    "note": "The first test I made, once the catalogue was collected, was creating warburgian-style plates, focusing on the presence or absence of the passe-partout, the frame that delimits the image, and on color: images in their original color or leveled to black and white.",
     "items": [
      {
       "id": "#1",
@@ -1042,7 +1042,7 @@ const ARCHIVE = {
    {
     "id": "S6",
     "dateRange": "2026-06",
-    "note": "Dopo le sperimentazioni in digitale ho voluto stampare nel formato deciso, 70×100cm, in bianco e nero. Il test voleva vedere, in grandezza finale, come si comportassero le immagini raccolte.",
+    "note": "After the digital experiments, I wanted to print in the chosen format, 70×100cm, in black and white. The test was meant to see, at final size, how the collected images would behave.",
     "items": [
      {
       "id": "#8",
@@ -1090,14 +1090,14 @@ const ARCHIVE = {
       "id": "#41",
       "date": "2026-07",
       "caption": "Free layout test 01",
-      "note": "Tavole singole e approccio compositivo al materiale.",
+      "note": "Single plates and a compositional approach to the material.",
       "img": "41_S8_2026_07_free_layout_test_01.jpg"
      },
      {
       "id": "#42",
       "date": "2026-07",
       "caption": "Free layout test 02",
-      "note": "Tavole singole e approccio compositivo al materiale.",
+      "note": "Single plates and a compositional approach to the material.",
       "img": "42_S8_2026_07_free_layout_test_02.jpg",
       "group": "ultrasound-lung-processing"
      },
@@ -1105,7 +1105,7 @@ const ARCHIVE = {
       "id": "#43",
       "date": "2026-07",
       "caption": "Free layout test 03",
-      "note": "Tavole singole e approccio compositivo al materiale.",
+      "note": "Single plates and a compositional approach to the material.",
       "img": "43_S8_2026_07_free_layout_test_03.jpg",
       "group": "ultrasound-lung-processing"
      }
@@ -1114,7 +1114,7 @@ const ARCHIVE = {
    {
     "id": "S8",
     "dateRange": "2026-06",
-    "note": "Affinità con S4 (pairs vertical test) — stesso ambito di ricerca su coppie e ritmo sonoro/visivo, trattato qui come lotto a sé per la sua specificità di test audio.",
+    "note": "Affinity with S4 (pairs vertical test), same research area on pairs and sound/visual rhythm, treated here as a separate batch for its specific focus on audio testing.",
     "items": [
      {
       "id": "#39",
@@ -1135,7 +1135,7 @@ const ARCHIVE = {
    {
     "id": "S9",
     "dateRange": "2026-07",
-    "note": "Ultrasound invertito.",
+    "note": "Inverted ultrasound.",
     "items": [
      {
       "id": "#46",
@@ -1165,7 +1165,7 @@ const ARCHIVE = {
    {
     "id": "S11",
     "dateRange": "2026-08",
-    "note": "Dummy booklet con raccolta coppie.",
+    "note": "Dummy booklet with a collection of pairs.",
     "items": [
      {
       "id": "#48",
@@ -1187,13 +1187,13 @@ const ARCHIVE = {
    {
     "id": "S12",
     "dateRange": "2026-07",
-    "note": "Lotto scorporato da S7 (\"Free layout test\"): analisi del layout warburghiano applicata al proprio catalogo, distinta dall'approccio compositivo dei pezzi #41-43.",
+    "note": "Batch split off from S7 (\"Free layout test\"): analysis of the warburgian layout applied to my own catalogue, distinct from the compositional approach of pieces #41-43.",
     "items": [
      {
       "id": "#44",
       "date": "2026-07",
       "caption": "Free layout test 04",
-      "note": "Realizzazione di tavole basata sul layout di Warburg. Analisi del layout di Warburg e linee per notare la continuità del materiale.",
+      "note": "Making plates based on Warburg's layout. Analysis of Warburg's layout and lines to trace continuity in the material.",
       "img": "44_S8_2026_07_free_layout_test_04.jpg",
       "group": "warburg-layout-analysis"
      },
@@ -1201,14 +1201,14 @@ const ARCHIVE = {
       "id": "#45",
       "date": "2026-07",
       "caption": "Free layout test 05",
-      "note": "Realizzazione di tavole basata sul layout di Warburg. Analisi del layout di Warburg e linee per notare la continuità del materiale.",
+      "note": "Making plates based on Warburg's layout. Analysis of Warburg's layout and lines to trace continuity in the material.",
       "img": "45_S8_2026_07_free_layout_test_05.jpg",
       "group": "warburg-layout-analysis"
      }
     ]
    }
   ],
-  "reflection": "La sperimentazione visiva è connessa al suo aspetto tecnico. Per questo bisogna vedere le fasi T e S — e ovviamente anche R — non come successive, ma in continua relazione, in cui l'influenza di una ha impatto sul resto. In S ho tentato di lavorare con i materiali e nel digitale. La creazione di griglie, la possibilità di visualizzare fisicamente il prodotto nella sua composizione, forma, senso dello spazio, colore, non può essere abbandonata solamente per una creazione digitale, soprattutto quando poi il risultato finale è fisico. La creazione delle tavole e degli esperimenti è stata un continuo susseguirsi di piccoli passi e miglioramenti.",
+  "reflection": "Visual experimentation is connected to its technical side. Because of this, the T and S phases, and of course R too, should be seen not as sequential, but in constant relation, where the influence of one has an impact on the rest. In S I tried working with materials and digitally. The creation of grids, and the chance to physically see the product in its composition, form, sense of space and color, cannot be given up for a purely digital process, especially when the final result is physical. The creation of the plates and experiments was a continuous sequence of small steps and improvements.",
   "reflections": "Experimenting with materials, layouts, and composition let me do more than just realize the ideas that were forming. It let me create new ones while I was still working on others. In my experience, practical experimentation always goes together with a why, with a thought that gives it structure. Because of this, I unfortunately had to postpone and delay several possibilities, other tests, other materials. If I could go back, I would probably have started with more practical tests, with clearer definitions of materials and formats from early on."
  }
 };
