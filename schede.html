@@ -51,7 +51,7 @@
         box.className = "box";
         if(im.file){
           const img = document.createElement("img");
-          img.src = `schede/${im.file}`;
+          img.src = `Schede/${im.file}`;
           img.alt = im.label || "";
           img.onerror = () => { img.style.display = "none"; };
           box.appendChild(img);
