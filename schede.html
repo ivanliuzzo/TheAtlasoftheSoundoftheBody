@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schede — catalogo grezzo — Ivan Liuzzo</title>
+<title>Schede — raw catalogue — Ivan Liuzzo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
         box.className = "box";
         if(im.file){
           const img = document.createElement("img");
-          img.src = `images/schede/${im.file}`;
+          img.src = `schede/${im.file}`;
           img.alt = im.label || "";
           img.onerror = () => { img.style.display = "none"; };
           box.appendChild(img);

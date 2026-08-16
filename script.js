@@ -114,7 +114,7 @@ function togglePanel(catKey, nucleus, item, rowEl){
 
   if(item.img){
     const img = document.createElement("img");
-    img.src = `images/${item.img}`;
+    img.src = `immagini di documentazione/${catKey}/${item.img}`;
     img.alt = item.caption;
     img.onerror = () => { img.style.display = "none"; };
     panel.appendChild(img);

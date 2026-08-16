@@ -163,9 +163,10 @@ body.archive{
 }
 .panel .p-close:hover{ color:#000; }
 .panel .p-id{
-  font-size:14px;
+  font-size:10px;
   font-weight:600;
   margin-bottom:2px;
+  letter-spacing:0.02em;
 }
 .panel .p-date{
   color:var(--gray);

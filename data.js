@@ -1,6 +1,6 @@
 const ARCHIVE = {
  "R": {
-  "label": "Ricerca",
+  "label": "Research",
   "color": "#000",
   "nuclei": [
    {
@@ -422,12 +422,12 @@ const ARCHIVE = {
       "img": "R1x_12_2026_04_spirometry_flow_respiration_excluded.gif"
      }
     ],
-    "label": "materiale escluso per criterio"
+    "label": "material excluded by criterion"
    }
   ]
  },
  "T": {
-  "label": "Tecnica",
+  "label": "Technique",
   "color": "#000",
   "nuclei": [
    {
@@ -720,7 +720,7 @@ const ARCHIVE = {
   ]
  },
  "S": {
-  "label": "Tentativi",
+  "label": "Attempts",
   "color": "#000",
   "nuclei": [
    {
