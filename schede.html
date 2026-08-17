@@ -15,9 +15,50 @@
 .scheda-meta{ color:#888; font-size:10px; margin-bottom:8px; }
 .scheda-grid{ display:flex; flex-wrap:wrap; gap:4px; }
 .scheda-thumb{ width:64px; }
-.scheda-thumb .box{ width:64px; height:64px; border:1px solid #000; background:#f0f0f0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.scheda-thumb .box{ width:64px; height:64px; border:1px solid #000; background:#f0f0f0; display:flex; align-items:center; justify-content:center; overflow:hidden; cursor:pointer; }
+.scheda-thumb .box:hover{ border-color:#666; }
 .scheda-thumb img{ max-width:100%; max-height:100%; display:block; }
 .scheda-thumb .fig{ font-size:8px; color:#888; text-align:center; margin-top:2px; word-break:break-all; }
+
+/* segnaposto per immagini dichiarate assenti (non un errore, una lacuna nota) */
+.scheda-thumb .box.missing{ background:#fff; border-style:dashed; cursor:default; }
+.scheda-thumb .box.missing .missing-label{ font-size:6.5px; color:#bbb; text-align:center; padding:2px; line-height:1.3; }
+
+/* lightbox */
+.lightbox{
+  display:none;
+  position:fixed; inset:0;
+  background:rgba(0,0,0,0.92);
+  z-index:100;
+  align-items:center;
+  justify-content:center;
+  cursor:zoom-out;
+  padding:40px;
+}
+.lightbox.open{ display:flex; }
+.lightbox img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  border:1px solid #444;
+}
+.lightbox .lb-caption{
+  position:fixed;
+  bottom:18px; left:0; right:0;
+  text-align:center;
+  color:#ccc;
+  font-size:10px;
+  font-family: "Space Mono", monospace;
+}
+.lightbox .lb-close{
+  position:fixed;
+  top:16px; right:22px;
+  color:#ccc;
+  font-size:12px;
+  font-family: "Space Mono", monospace;
+  cursor:pointer;
+}
+.lightbox .lb-close:hover{ color:#fff; }
 </style>
 </head>
 <body class="archive">
@@ -25,9 +66,33 @@
     <a href="archive.html" class="back">&larr; back to archive</a>
   </header>
   <main class="schede-body" id="schede-root"></main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lb-close" id="lbClose">close ✕</div>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lb-caption" id="lightboxCaption"></div>
+  </div>
+
   <script src="schede-data.js"></script>
   <script>
     const root = document.getElementById("schede-root");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+
+    function openLightbox(src, caption){
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption || "";
+      lightbox.classList.add("open");
+    }
+    function closeLightbox(){
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    }
+    lightbox.addEventListener("click", closeLightbox);
+    document.getElementById("lbClose").addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); });
+    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeLightbox(); });
+
     SCHEDE.forEach(s => {
       const block = document.createElement("div");
       block.className = "scheda-block";
@@ -44,18 +109,34 @@
 
       const grid = document.createElement("div");
       grid.className = "scheda-grid";
+
       s.images.forEach(im => {
+        // riga sommario senza immagine propria (i figli con lettera la mostrano già): non renderizzo nulla
+        if(im.file === "—" && !im.missing) return;
+
         const t = document.createElement("div");
         t.className = "scheda-thumb";
         const box = document.createElement("div");
         box.className = "box";
-        if(im.file){
+
+        if(im.missing){
+          box.classList.add("missing");
+          const note = document.createElement("div");
+          note.className = "missing-label";
+          note.textContent = "image not available";
+          note.title = im.missingNote || "";
+          box.appendChild(note);
+        } else if(im.file){
           const img = document.createElement("img");
-          img.src = `Schede/${im.file}`;
+          const src = `Schede/${im.file}`;
+          img.src = src;
           img.alt = im.label || "";
+          img.loading = "lazy";
           img.onerror = () => { img.style.display = "none"; };
+          img.addEventListener("click", () => openLightbox(src, im.label || ""));
           box.appendChild(img);
         }
+
         const fig = document.createElement("div");
         fig.className = "fig";
         fig.textContent = im.label || "";
@@ -63,6 +144,7 @@
         t.appendChild(fig);
         grid.appendChild(t);
       });
+
       block.appendChild(grid);
       root.appendChild(block);
     });

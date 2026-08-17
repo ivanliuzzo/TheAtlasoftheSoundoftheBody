@@ -9,7 +9,7 @@ const SCHEDE = [
   "images": [
    {
     "label": "001_MED_OCC-2010_fonocardiogramma",
-    "file": "001_MED_OCC-2010_fonocardiogramma.jpeg",
+    "file": "001_MED_OCC-2010_fonocardiogramma.jpg",
     "figura": "—"
    }
   ]
@@ -79,112 +79,112 @@ const SCHEDE = [
    },
    {
     "label": "002k_MED_AFR-2025_lung-ultrasound",
-    "file": "002k_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002k_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "RT UPPER POST LONG"
    },
    {
     "label": "002l_MED_AFR-2025_lung-ultrasound",
-    "file": "002l_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002l_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LOWER LAT TRANS"
    },
    {
     "label": "002m_MED_AFR-2025_lung-ultrasound",
-    "file": "002m_MED_AFR-2025_lung-ultrasound002m_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002m_MED_AFR-2025_lung-ultrasound002m_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT ANT UPPER TRANS"
    },
    {
     "label": "002n_MED_AFR-2025_lung-ultrasound",
-    "file": "002n_bit_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002n_bit_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT ANT UPPER TRANS"
    },
    {
     "label": "002o_MED_AFR-2025_lung-ultrasound",
-    "file": "002o_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002o_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "RIGHT UPPER LAT LONG"
    },
    {
     "label": "002p_MED_AFR-2025_lung-ultrasound",
-    "file": "002p_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002p_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT LAT LOWER TRANS"
    },
    {
     "label": "002q_MED_AFR-2025_lung-ultrasound",
-    "file": "002q_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002q_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT LAT UPPER TRANS"
    },
    {
     "label": "002r_MED_AFR-2025_lung-ultrasound",
-    "file": "002r_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002r_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT POST LOWER TRANS"
    },
    {
     "label": "002s_MED_AFR-2025_lung-ultrasound",
-    "file": "002s_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002s_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LEFT LOWER ANT LONG"
    },
    {
     "label": "002t_MED_AFR-2025_lung-ultrasound",
-    "file": "002t_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002t_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT ANT LOWER TRANS"
    },
    {
     "label": "002u_MED_AFR-2025_lung-ultrasound",
-    "file": "002u_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002u_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002v_MED_AFR-2025_lung-ultrasound",
-    "file": "002v_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002v_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002w_MED_AFR-2025_lung-ultrasound",
-    "file": "002w_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002w_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002x_MED_AFR-2025_lung-ultrasound",
-    "file": "002x_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002x_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002y_MED_AFR-2025_lung-ultrasound",
-    "file": "002y_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002y_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    },
    {
     "label": "002z_MED_AFR-2025_lung-ultrasound",
-    "file": "002z_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002z_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002aa_MED_AFR-2025_lung-ultrasound",
-    "file": "002aa_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002aa_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    },
    {
     "label": "002ab_MED_AFR-2025_lung-ultrasound",
-    "file": "002ab_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002ab_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    },
    {
     "label": "002ac_MED_AFR-2025_lung-ultrasound",
-    "file": "002ac_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002ac_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT LOWER TRANS"
    },
    {
     "label": "002ad_MED_AFR-2025_lung-ultrasound",
-    "file": "002ad_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002ad_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    },
    {
     "label": "002ae_MED_AFR-2025_lung-ultrasound",
-    "file": "002ae_MED_AFR-2025_lung-ultrasound.png",
+    "file": "002ae_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    },
    {
     "label": "002af_MED_AFR-2025_lung-ultrasound",
-    "file": "002af_MED_AFR-2025_lung-ultrasound.jpeg",
+    "file": "002af_MED_AFR-2025_lung-ultrasound.jpg",
     "figura": "LT LAT UPPER LONG"
    }
   ]
@@ -204,27 +204,27 @@ const SCHEDE = [
    },
    {
     "label": "003a_MED_OCC-2012_fetal-PCG",
-    "file": "003a_MED_OCC-2012_fetal-PCG.png",
+    "file": "003a_MED_OCC-2012_fetal-PCG.jpg",
     "figura": "p01_GW_36"
    },
    {
     "label": "003b_MED_OCC-2012_fetal-PCG",
-    "file": "003b_MED_OCC-2012_fetal-PCG.png",
+    "file": "003b_MED_OCC-2012_fetal-PCG.jpg",
     "figura": "p02_GW_31"
    },
    {
     "label": "003c_MED_OCC-2012_fetal-PCG",
-    "file": "003c_MED_OCC-2012_fetal-PCG.png",
+    "file": "003c_MED_OCC-2012_fetal-PCG.jpg",
     "figura": "p04_GW_38"
    },
    {
     "label": "003d_MED_OCC-2012_fetal-PCG",
-    "file": "003d_MED_OCC-2012_fetal-PCG.png",
+    "file": "003d_MED_OCC-2012_fetal-PCG.jpg",
     "figura": "p09_GW_40"
    },
    {
     "label": "003e_MED_OCC-2012_fetal-PCG",
-    "file": "003e_MED_OCC-2012_fetal-PCG.png",
+    "file": "003e_MED_OCC-2012_fetal-PCG.jpg",
     "figura": "p11_GW_37"
    }
   ]
@@ -244,7 +244,7 @@ const SCHEDE = [
    },
    {
     "label": "004a_MED_OCC-1878_Marey-methode-graphique",
-    "file": "004a_MED_OCC-1878_Marey-methode-graphique.tif",
+    "file": "004a_MED_OCC-1878_Marey-methode-graphique.jpg",
     "figura": "Fig.150 p.360 — Pouls carotidien"
    },
    {
@@ -289,32 +289,32 @@ const SCHEDE = [
    },
    {
     "label": "005a_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005a_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005a_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.14 pressione sangue/gittata cardiaca (Patterson/Piper/Starling) + Fig.15 ECG derivazioni I,II,III (da Best e Taylor)"
    },
    {
     "label": "005b_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005b_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005b_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.8 Variazioni fisiologiche P,Q,R,S,T — altezza minima/media/massima (da Brugsch)"
    },
    {
     "label": "005c_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005c_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005c_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.6 Flebogramma giugulare di un uomo normale, semischematico — onde a,c,v,x,y"
    },
    {
     "label": "005d_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005d_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005d_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.5 Tracciati di polsi a diversa velocità: 1)normale 2)dicroto 3)stenosi aortica 4)insufficienza aortica"
    },
    {
     "label": "005e_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005e_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005e_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.10 Curva oscillatoria reale — indice oscillometrico Mn/Mx (da Gallavardin)"
    },
    {
     "label": "005f_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    "file": "005f_MED_OCC-1930-1960_cardio-semiologia-strumentale.png",
+    "file": "005f_MED_OCC-1930-1960_cardio-semiologia-strumentale.jpg",
     "figura": "Fig.7 Schema ECG normale — tempi medi fasi P,QRS,ST,T in centesimi di secondo (da Carpi)"
    }
   ]
@@ -334,32 +334,32 @@ const SCHEDE = [
    },
    {
     "label": "006a_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006a_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006a_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.1-1 spirometro + FEV"
    },
    {
     "label": "006b_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006b_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006b_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.1-2 espirazione forzata A/B/C"
    },
    {
     "label": "006c_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006c_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006c_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.1-3 calcolo FEF"
    },
    {
     "label": "006d_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006d_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006d_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.1-11 test azoto"
    },
    {
     "label": "006e_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006e_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006e_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.3-5 schema polmone"
    },
    {
     "label": "006f_MED_OCC-1990_West-fisiopatologia-polmonare",
-    "file": "006f_MED_OCC-1990_West-fisiopatologia-polmonare.png",
+    "file": "006f_MED_OCC-1990_West-fisiopatologia-polmonare.jpg",
     "figura": "Fig.6-9 distribuzione V/Q"
    }
   ]
@@ -379,57 +379,57 @@ const SCHEDE = [
    },
    {
     "label": "007a_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007a_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007a_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch9 Fig.9-1+9-2+9-3"
    },
    {
     "label": "007b_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007b_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007b_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch9 Fig.9-4 periodo refrattario"
    },
    {
     "label": "007c_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007c_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007c_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch9 Fig.9-5 ciclo cardiaco completo"
    },
    {
     "label": "007d_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007d_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007d_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch9 Fig.9-7 volume-pressione"
    },
    {
     "label": "007e_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007e_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007e_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch9 Fig.9-13 pressione + dP/dt"
    },
    {
     "label": "007f_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007f_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007f_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch11 Fig.11-1+11-2+11-3"
    },
    {
     "label": "007g_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007g_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007g_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch11 Fig.11-7+11-8+11-9+11-10"
    },
    {
     "label": "007h_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007h_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007h_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch13 Fig.13-1+13-2+13-3+13-4"
    },
    {
     "label": "007i_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007i_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007i_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch13 Fig.13-5+13-6+13-7+13-8"
    },
    {
     "label": "007j_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007j_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007j_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch23 Fig.23-1+23-2+23-3"
    },
    {
     "label": "007k_MED_OCC-1991_Guyton-medical-physiology",
-    "file": "007k_MED_OCC-1991_Guyton-medical-physiology.png",
+    "file": "007k_MED_OCC-1991_Guyton-medical-physiology.jpg",
     "figura": "ch37 Fig.37-6+37-7 spirometro"
    }
   ]
@@ -449,42 +449,42 @@ const SCHEDE = [
    },
    {
     "label": "008a_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008a_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008a_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Rumori cardiaci, p.335"
    },
    {
     "label": "008b_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008b_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008b_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Click sistolico, p.377"
    },
    {
     "label": "008c_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008c_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008c_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Volumi polmonari, p.271"
    },
    {
     "label": "008d_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008d_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008d_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Schemi soffi, p.385"
    },
    {
     "label": "008e_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008e_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008e_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Soffi diastolici, p.459"
    },
    {
     "label": "008f_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008f_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008f_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Tachicardia ventricolare, p.508"
    },
    {
     "label": "008g_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008g_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008g_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "SA-ECG alta definizione, p.523"
    },
    {
     "label": "008h_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    "file": "008h_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.png",
+    "file": "008h_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica.jpg",
     "figura": "Scompenso cardiaco, p.547"
    }
   ]
@@ -500,7 +500,9 @@ const SCHEDE = [
    {
     "label": "009_MED_OCC-1842_Battaglia-stetoscopio",
     "file": "—",
-    "figura": "Fig.1+2 componenti stetoscopio"
+    "figura": "Fig.1+2 componenti stetoscopio",
+    "missing": true,
+    "missingNote": "Image not available: no corresponding file found in the digital archive (inconsistency with the physical source)."
    }
   ]
  },
@@ -529,7 +531,7 @@ const SCHEDE = [
    },
    {
     "label": "010c_NOT_OCC-1050_Boezio-institutio-musica",
-    "file": "010c_NOT_OCC-1050_Boezio-institutio-musica.jpeg",
+    "file": "010c_NOT_OCC-1050_Boezio-institutio-musica.jpg",
     "figura": "f.119 linee angolari a V e W"
    }
   ]
@@ -695,6 +697,23 @@ const SCHEDE = [
   ]
  },
  {
+  "scheda": "015",
+  "categoria": "MED",
+  "area": "OCC",
+  "anno": "nd",
+  "autore": "Leonard Landois",
+  "titolo": "Haemautograph [esclusa: soggetto animale, nessun emautogramma umano verificato reperito]",
+  "images": [
+   {
+    "label": "015_MED_OCC-nd_landois-haemautograph",
+    "file": "—",
+    "figura": null,
+    "missing": true,
+    "missingNote": "Intentionally omitted: the Landois haemautograph recording available is from an animal subject; no verified human haemautogram was located during the research."
+   }
+  ]
+ },
+ {
   "scheda": "016",
   "categoria": "MED",
   "area": "OCC",
@@ -729,7 +748,7 @@ const SCHEDE = [
    },
    {
     "label": "016e_MED_OCC-1890_roy-adami-heartbeat-pulsewave",
-    "file": "016e_MED_OCC-1890_roy-adami-heartbeat-pulsewave .jpg",
+    "file": "016e_MED_OCC-1890_roy-adami-heartbeat-pulsewave.jpg",
     "figura": "p.176, Fig.12 — Idem Fig.11, secondo cane: apex-beat (A) + pressione intraventricolare (B) simultanei"
    },
    {
@@ -784,7 +803,7 @@ const SCHEDE = [
    },
    {
     "label": "019a_SAC_ASI-nd_lontar-panerangan-panyarang",
-    "file": "019a_SAC_ASI-nd_lontar-panerangan-panyarang .jp2",
+    "file": "019a_SAC_ASI-nd_lontar-panerangan-panyarang.jpg",
     "figura": "Foglia 0006 JP2 300ppi — aksara Bali, scrittura continua su righe orizzontali"
    },
    {
@@ -809,7 +828,7 @@ const SCHEDE = [
    },
    {
     "label": "020a_SAC_ASI-nd_lontar-tutur-rajapeni",
-    "file": "020a_SAC_ASI-nd_lontar-tutur-rajapeni  .jp2",
+    "file": "020a_SAC_ASI-nd_lontar-tutur-rajapeni.jpg",
     "figura": "Foglia 0006 — testo aksara + illustrazioni; foglio grande (19026x10696px)"
    }
   ]
@@ -829,12 +848,12 @@ const SCHEDE = [
    },
    {
     "label": "021a_SAC_ASI-nd_lontar-usadha-gede",
-    "file": "021a_SAC_ASI-nd_lontar-usadha-gede.jpf",
+    "file": "021a_SAC_ASI-nd_lontar-usadha-gede.jpg",
     "figura": "Foglia 0031 JP2 300ppi — aksara Bali, testo medico denso"
    },
    {
     "label": "021b_SAC_ASI-nd_lontar-usadha-gede",
-    "file": "021b_SAC_ASI-nd_lontar-usadha-gede .jp2",
+    "file": "021b_SAC_ASI-nd_lontar-usadha-gede.jpg",
     "figura": "Foglia 0031 JPF alta risoluzione — stessa foglia, formato archivio"
    }
   ]
@@ -854,42 +873,42 @@ const SCHEDE = [
    },
    {
     "label": "022a_MED_OCC-2018_voiced-physionet",
-    "file": "022a_MED_OCC-2018_voiced-physionet.png",
+    "file": "022a_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice001 — M, 32aa, disfonia ipercinetica — ampiezza ±0.6"
    },
    {
     "label": "022b_MED_OCC-2018_voiced-physionet",
-    "file": "022b_MED_OCC-2018_voiced-physionet.png",
+    "file": "022b_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice002 — dati demografici in voice002-info.txt — ampiezza ±0.75"
    },
    {
     "label": "022c_MED_OCC-2018_voiced-physionet",
-    "file": "022c_MED_OCC-2018_voiced-physionet.png",
+    "file": "022c_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice003 — ampiezza ±1.00, segnale saturo"
    },
    {
     "label": "022d_MED_OCC-2018_voiced-physionet",
-    "file": "022d_MED_OCC-2018_voiced-physionet.png",
+    "file": "022d_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice004 — ampiezza ±0.20 [morfologia distinta: prob. disfonia ipocinetica]"
    },
    {
     "label": "022e_MED_OCC-2018_voiced-physionet",
-    "file": "022e_MED_OCC-2018_voiced-physionet.png",
+    "file": "022e_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice007 — ampiezza ±0.6"
    },
    {
     "label": "022f_MED_OCC-2018_voiced-physionet",
-    "file": "022f_MED_OCC-2018_voiced-physionet.png",
+    "file": "022f_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice008 — ampiezza ±0.6, envelope espansa"
    },
    {
     "label": "022g_MED_OCC-2018_voiced-physionet",
-    "file": "022g_MED_OCC-2018_voiced-physionet.png",
+    "file": "022g_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice012 — ampiezza ±0.4, crescita graduale"
    },
    {
     "label": "022h_MED_OCC-2018_voiced-physionet",
-    "file": "022h_MED_OCC-2018_voiced-physionet.png",
+    "file": "022h_MED_OCC-2018_voiced-physionet.jpg",
     "figura": "voice013 — ampiezza ±1.00"
    }
   ]
@@ -909,27 +928,27 @@ const SCHEDE = [
    },
    {
     "label": "023a_MED_OCC-2012_cesarelli-fetal-pcg",
-    "file": "023a_MED_OCC-2012_cesarelli-fetal-pcg.png",
+    "file": "023a_MED_OCC-2012_cesarelli-fetal-pcg.jpg",
     "figura": "p01 — GW 36 (36 sett.) — ampiezza ±25000, picchi acuti isolati"
    },
    {
     "label": "023b_MED_OCC-2012_cesarelli-fetal-pcg",
-    "file": "023b_MED_OCC-2012_cesarelli-fetal-pcg.png",
+    "file": "023b_MED_OCC-2012_cesarelli-fetal-pcg.jpg",
     "figura": "p02 — GW 31 (31 sett.) — silenzio 0-3 sec (posizionamento), poi segnale ±15000"
    },
    {
     "label": "023c_MED_OCC-2012_cesarelli-fetal-pcg",
-    "file": "023c_MED_OCC-2012_cesarelli-fetal-pcg.png",
+    "file": "023c_MED_OCC-2012_cesarelli-fetal-pcg.jpg",
     "figura": "p04 — GW 38 (38 sett.) — ampiezza ±15000, segnale continuo uniforme"
    },
    {
     "label": "023d_MED_OCC-2012_cesarelli-fetal-pcg",
-    "file": "023d_MED_OCC-2012_cesarelli-fetal-pcg.png",
+    "file": "023d_MED_OCC-2012_cesarelli-fetal-pcg.jpg",
     "figura": "p09 — GW 40 (termine) — ampiezza ±20000, pattern più regolare"
    },
    {
     "label": "023e_MED_OCC-2012_cesarelli-fetal-pcg",
-    "file": "023e_MED_OCC-2012_cesarelli-fetal-pcg.png",
+    "file": "023e_MED_OCC-2012_cesarelli-fetal-pcg.jpg",
     "figura": "p11 — GW 37 (37 sett.) — ampiezza ±15000"
    }
   ]
@@ -949,52 +968,52 @@ const SCHEDE = [
    },
    {
     "label": "024a_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024a_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024a_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO A — linea diagonale ±6000, finestra 120μs [estratto vizioso]"
    },
    {
     "label": "024b_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024b_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024b_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO A — linea diagonale ±80, finestra 120μs [estratto vizioso]"
    },
    {
     "label": "024c_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024c_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024c_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO A — linea diagonale ±30000, finestra 120μs [estratto vizioso]"
    },
    {
     "label": "024d_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024d_MED_OCC-2021_ephnogram-ecg-pcg .png",
+    "file": "024d_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶, finestra 0.5ms"
    },
    {
     "label": "024e_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024e_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024e_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶, finestra 0.5ms"
    },
    {
     "label": "024f_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024f_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024f_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶, finestra 0.5ms"
    },
    {
     "label": "024g_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024g_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024g_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶ [ampiezza leggermente minore]"
    },
    {
     "label": "024h_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024h_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024h_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶"
    },
    {
     "label": "024i_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024i_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024i_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO B — tono cardiaco singolo, ampiezza 1×10⁶ [notch più marcato]"
    },
    {
     "label": "024j_MED_OCC-2021_ephnogram-ecg-pcg",
-    "file": "024j_MED_OCC-2021_ephnogram-ecg-pcg.png",
+    "file": "024j_MED_OCC-2021_ephnogram-ecg-pcg.jpg",
     "figura": "GRUPPO A — linea diagonale ±8000, finestra 120μs [estratto vizioso]"
    }
   ]
@@ -1009,12 +1028,12 @@ const SCHEDE = [
   "images": [
    {
     "label": "017_IMP_OCC-1857_scott-phonautograph",
-    "file": "017_IMP_OCC-1857_scott-phonautograph.jpf",
+    "file": "017_IMP_OCC-1857_scott-phonautograph.jpg",
     "figura": "Fonoautogramma — traccia su carta affumicata, digitalizzata da firstsounds.org"
    },
    {
     "label": "017a_IMP_OCC-1857_scott-phonautograph",
-    "file": "017_IMP_OCC-1857_scott-phonautograph.jpf",
+    "file": "017_IMP_OCC-1857_scott-phonautograph.jpg",
     "figura": "Fonoautogramma Scott — traccia acustica originale 1857"
    }
   ]
@@ -1054,22 +1073,22 @@ const SCHEDE = [
    },
    {
     "label": "029a_MED_OCC-2023_falvo-spirometry-raw",
-    "file": "029a_MED_OCC-2023_falvo-spirometry-raw.png",
+    "file": "029a_MED_OCC-2023_falvo-spirometry-raw.jpg",
     "figura": "6 soggetti individuali — curva flusso-volume, 3 trial (rosso=T1, grigio=T2-3)"
    },
    {
     "label": "029b_MED_OCC-2023_falvo-spirometry-raw",
-    "file": "029b_MED_OCC-2023_falvo-spirometry-raw.png",
+    "file": "029b_MED_OCC-2023_falvo-spirometry-raw.jpg",
     "figura": "Flusso respiratorio nel tempo — 3 soggetti, Trial 1 (rosso=esp., blu=insp.)"
    },
    {
     "label": "029c_MED_OCC-2023_falvo-spirometry-raw",
-    "file": "029c_MED_OCC-2023_falvo-spirometry-raw.png",
+    "file": "029c_MED_OCC-2023_falvo-spirometry-raw.jpg",
     "figura": "20 soggetti sovrapposti — la norma come distribuzione, non come linea"
    },
    {
     "label": "029d_MED_OCC-2023_falvo-spirometry-raw",
-    "file": "029d_MED_OCC-2023_falvo-spirometry-raw.png",
+    "file": "029d_MED_OCC-2023_falvo-spirometry-raw.jpg",
     "figura": "Confronto M vs F — 15 soggetti/gruppo, curva flusso-volume"
    }
   ]
@@ -1089,52 +1108,52 @@ const SCHEDE = [
    },
    {
     "label": "026a_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026a_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026a_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s1_sit — soggetto 1, seduto, 15s"
    },
    {
     "label": "026b_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026b_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026b_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s1_walk — soggetto 1, camminata, 15s"
    },
    {
     "label": "026c_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026c_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026c_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s2_sit — soggetto 2, seduto, 15s"
    },
    {
     "label": "026d_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026d_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026d_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s2_walk — soggetto 2, camminata, 15s"
    },
    {
     "label": "026e_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026e_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026e_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s3_sit — soggetto 3, seduto, 15s"
    },
    {
     "label": "026f_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026f_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026f_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s3_walk — soggetto 3, camminata, 15s"
    },
    {
     "label": "026g_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026g_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026g_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s4_sit — soggetto 4, seduto, 15s"
    },
    {
     "label": "026h_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026h_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026h_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s4_walk — soggetto 4, camminata, 15s"
    },
    {
     "label": "026i_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026i_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026i_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s5_sit — soggetto 5, seduto, 15s"
    },
    {
     "label": "026j_MED_OCC-2022_mehrgardt-ptt-ppg",
-    "file": "026j_MED_OCC-2022_mehrgardt-ptt-ppg.png",
+    "file": "026j_MED_OCC-2022_mehrgardt-ptt-ppg.jpg",
     "figura": "s5_walk — soggetto 5, camminata, 15s"
    }
   ]
@@ -1154,52 +1173,52 @@ const SCHEDE = [
    },
    {
     "label": "027a_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027a_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027a_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc01 — Respirazione+PPG+ECG, 30s ICU"
    },
    {
     "label": "027b_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027b_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027b_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc02 — Respirazione+PPG+ECG, 30s ICU"
    },
    {
     "label": "027c_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027c_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027c_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc03 — Respirazione+PPG+ECG, 30s ICU"
    },
    {
     "label": "027d_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027d_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027d_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc04 — ECG con artefatti, respirazione irregolare"
    },
    {
     "label": "027e_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027e_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027e_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc05 — respirazione molto lenta (apnea parziale?)"
    },
    {
     "label": "027f_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027f_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027f_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc06 — ritmo regolare, PPG stabile"
    },
    {
     "label": "027g_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027g_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027g_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc07 — ritmo respiratorio regolare, frequenza elevata"
    },
    {
     "label": "027h_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027h_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027h_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc08 — respirazione irregolare"
    },
    {
     "label": "027i_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027i_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027i_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc09 — PPG molto regolare, respiro stabile"
    },
    {
     "label": "027j_MED_OCC-2016_pimentel-bidmc-ppg",
-    "file": "027j_MED_OCC-2016_pimentel-bidmc-ppg.png",
+    "file": "027j_MED_OCC-2016_pimentel-bidmc-ppg.jpg",
     "figura": "bidmc10 — respiro aritmico, PPG variabile"
    }
   ]
@@ -1219,52 +1238,52 @@ const SCHEDE = [
    },
    {
     "label": "028a_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028a_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028a_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0001 — ECG+PCG 2 canali, 10s"
    },
    {
     "label": "028b_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028b_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028b_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0002 — ECG+PCG 2 canali, spike PCG inizio"
    },
    {
     "label": "028c_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028c_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028c_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0003 — ECG+PCG robusto, 10s"
    },
    {
     "label": "028d_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028d_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028d_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0004 — ECG+PCG+PCG2+AUX1+AUX2 5 canali"
    },
    {
     "label": "028e_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028e_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028e_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0005 — ECG+PCG+PCG2+AUX1+AUX2 5 canali"
    },
    {
     "label": "028f_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028f_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028f_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0006 — ECG+PCG+PCG2+AUX1+AUX2 5 canali"
    },
    {
     "label": "028g_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028g_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028g_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0007 — ECG+PCG+PCG2+AUX1+AUX2 5 canali"
    },
    {
     "label": "028h_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028h_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028h_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0008 — PCG con artefatto a ~4s"
    },
    {
     "label": "028i_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028i_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028i_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0009 — ECG+PCG+PCG2+AUX1+AUX2 5 canali"
    },
    {
     "label": "028j_MED_OCC-2021_kazemnejad-ephnogram",
-    "file": "028j_MED_OCC-2021_kazemnejad-ephnogram.png",
+    "file": "028j_MED_OCC-2021_kazemnejad-ephnogram.jpg",
     "figura": "ECGPCG0010 — ECG+PCG 2 canali, morfologia chiara"
    }
   ]
