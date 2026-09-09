@@ -144,9 +144,9 @@
 
   .pair-images img {
     display: block;
-    height: 190px;
+    height: 230px;
     width: auto;
-    max-width: 150px;
+    max-width: 185px;
     object-fit: cover;
     filter: grayscale(1) brightness(0.95);
     transition: filter 0.4s ease, opacity 0.4s ease;
@@ -159,8 +159,8 @@
   }
 
   .pair.zoomed .pair-images img {
-    height: min(64vh, 520px);
-    max-width: min(45vw, 420px);
+    height: min(74vh, 640px);
+    max-width: min(48vw, 480px);
   }
 
   /* ---------- Channel buttons (outside the images) ---------- */
@@ -188,6 +188,7 @@
     border-radius: 50%;
     width: 44px;
     height: 44px;
+    outline: none;
   }
   .channel-btn:hover {
     border-color: var(--ink-dim);
@@ -206,7 +207,7 @@
 
   /* ---------- Description (toggled on click) ---------- */
   .pair-desc {
-    max-width: 320px;
+    max-width: 340px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -215,7 +216,8 @@
     margin-top: 0;
   }
   .pair.open .pair-desc {
-    max-height: 260px;
+    max-height: 400px;
+    overflow-y: auto;
     opacity: 1;
     margin-top: 1rem;
   }
@@ -522,7 +524,7 @@ function buildPair(id, data) {
 
   const desc = document.createElement('div');
   desc.className = 'pair-desc';
-  desc.innerHTML = `<div class="desc-title">${data.title}</div><div class="desc-text">${data.text}</div>`;
+  desc.innerHTML = `<div class="desc-text">${data.text}</div>`;
   el.appendChild(desc);
 
   infoBtn.addEventListener('click', (e) => {
