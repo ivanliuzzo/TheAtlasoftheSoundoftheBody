@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Atlas of the Sound of the Body — Installation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+  :root {
+    --bg: #0a0a0a;
+    --ink: #f0ede6;
+    --ink-dim: #8a877e;
+    --accent: #c9a876;
+    --line: #2a2825;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 1.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    z-index: 50;
+    pointer-events: none;
+  }
+  .topbar a, .topbar button {
+    pointer-events: auto;
+    color: var(--ink-dim);
+    text-decoration: none;
+    background: none;
+    border: 1px solid var(--line);
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .topbar a:hover, .topbar button:hover {
+    color: var(--ink);
+    border-color: var(--ink-dim);
+  }
+  .topbar .title {
+    color: var(--ink-dim);
+    font-size: 0.7rem;
+  }
+
+  /* ---------- Room ---------- */
+  .room {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 2rem 4rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 3vh;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .row-top {
+    justify-content: center;
+  }
+
+  .row-mid {
+    justify-content: space-between;
+    padding: 0 6%;
+  }
+
+  .row-bottom {
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  /* ---------- Station ---------- */
+  .station {
+    position: relative;
+    width: 160px;
+    height: 210px;
+    background: #050505;
+    border: 1px solid var(--line);
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 1rem;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+    flex-shrink: 0;
+  }
+  .station.plexi {
+    width: 190px;
+    height: 130px;
+    background: #0d0d0d;
+  }
+  .station:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .station.active {
+    border-color: var(--accent);
+  }
+  .station .num {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+    font-size: 0.65rem;
+    color: var(--ink-dim);
+  }
+  .station .status {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+  }
+  .station.active .status {
+    color: var(--accent);
+  }
+  .station .pulse {
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--accent);
+    opacity: 0;
+  }
+  .station.active .pulse {
+    animation: pulse 2.4s ease-out infinite;
+  }
+  @keyframes pulse {
+    0%   { opacity: 0.55; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.06); }
+  }
+
+  /* placeholder image slot */
+  .station img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  /* ---------- Detail panel ---------- */
+  .detail {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #050505;
+    border-top: 1px solid var(--line);
+    padding: 1.4rem 2rem 1.8rem;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(.19,1,.22,1);
+    z-index: 40;
+    max-height: 45vh;
+    overflow-y: auto;
+  }
+  .detail.open { transform: translateY(0); }
+
+  .detail-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .detail-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.9rem;
+    gap: 1rem;
+  }
+  .detail-head h2 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .detail-close {
+    background: none;
+    border: none;
+    color: var(--ink-dim);
+    font-family: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    flex-shrink: 0;
+  }
+  .detail-close:hover { color: var(--ink); }
+
+  .detail p {
+    font-size: 0.72rem;
+    line-height: 1.65;
+    color: #c9c6bd;
+    max-width: 68ch;
+    margin: 0 0 1.1rem;
+  }
+
+  .channels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  .channels.single {
+    justify-content: center;
+  }
+
+  .channel-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-family: inherit;
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+    justify-content: center;
+  }
+  .channel-btn:hover {
+    border-color: var(--ink-dim);
+    color: var(--ink);
+  }
+  .channel-btn.playing {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(201, 168, 118, 0.5);
+  }
+  .channel-btn .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  .channel-btn.playing .dot {
+    background: #0a0a0a;
+    opacity: 1;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ---------- Ambient toggle ---------- */
+  .ambient-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .ambient-toggle .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink-dim);
+  }
+  .ambient-toggle.on .dot {
+    background: var(--accent);
+    animation: blink 3s ease-in-out infinite;
+  }
+
+  /* ---------- Intro overlay ---------- */
+  .intro {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    transition: opacity 0.8s ease;
+  }
+  .intro.hidden { opacity: 0; pointer-events: none; }
+  .intro p {
+    font-size: 0.75rem;
+    color: var(--ink-dim);
+    max-width: 40ch;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .intro button {
+    background: none;
+    border: 1px solid var(--ink-dim);
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 0.8rem 1.6rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  .intro button:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 640px) {
+    .row-mid { padding: 0 2%; }
+    .row-bottom { gap: 1rem; }
+    .station { width: 110px; height: 150px; }
+    .station.plexi { width: 140px; height: 95px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro">
+  <p>Five pairs. Each juxtaposes two levels of mediation through which the sound of the body has been made visible — vocally reinterpreted by Arthur Wilkens. Sound plays through this device; headphones recommended.</p>
+  <button id="enterBtn">Enter</button>
+</div>
+
+<div class="topbar">
+  <span class="title">The Atlas of the Sound of the Body — Installation</span>
+  <button id="ambientBtn" class="ambient-toggle">
+    <span class="dot"></span> ambient
+  </button>
+</div>
+
+<div class="room">
+
+  <div class="row row-top">
+    <div class="station plexi" data-station="5">
+      <div class="num">5</div>
+      <div class="status">listen</div>
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+  <div class="row row-mid">
+    <div class="station" data-station="3">
+      <div class="num">3</div>
+      <div class="status">listen</div>
+      <div class="pulse"></div>
+    </div>
+    <div class="station" data-station="4">
+      <div class="num">4</div>
+      <div class="status">listen</div>
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+  <div class="row row-bottom">
+    <div class="station" data-station="1">
+      <div class="num">1</div>
+      <div class="status">listen</div>
+      <div class="pulse"></div>
+    </div>
+    <div class="station" data-station="2">
+      <div class="num">2</div>
+      <div class="status">listen</div>
+      <div class="pulse"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="detail" id="detail">
+  <div class="detail-inner">
+    <div class="detail-head">
+      <h2 id="detailTitle">—</h2>
+      <button class="detail-close" id="closeDetail">close ✕</button>
+    </div>
+    <p id="detailText">—</p>
+    <div class="channels" id="channels"></div>
+  </div>
+</div>
+
+<audio id="ambientAudio" loop preload="none">
+  <source src="audio/ambient-sine.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* ============================================================
+   STATION DATA — placeholders. Replace `file` paths once the
+   audio recordings and images are available. Each station has
+   three channels: left image sound, right image sound, mix.
+   ============================================================ */
+const STATIONS = {
+  1: {
+    title: "Pair 1 — Hand-tool grid mosaic / Machine-algorithm grid mosaic",
+    text: "Two five-by-five grids of fragments: one spanning the hand-tool tradition across medical, notational and sacred sources; the other drawing exclusively on modern clinical and instrumental material.",
+    left: "audio/pair1-left.mp3",
+    mix: "audio/pair1-mix.mp3",
+    right: "audio/pair1-right.mp3"
+  },
+  2: {
+    title: "Pair 2 — 012b,f,i,k_MED_ASI-1368-1644_maiying-guizhi / 017_IMP_OCC-1857_scott-phonautograph",
+    text: "A composed overlay of four pulse-chart figures from the Renyuan maiying guizhi against Scott's phonautograph trace, rotated to a vertical orientation. Both hand-tool in mediation; the contrast lies in visual weight — composed density against found continuity.",
+    left: "audio/pair2-left.mp3",
+    mix: "audio/pair2-mix.mp3",
+    right: "audio/pair2-right.mp3"
+  },
+  3: {
+    title: "Pair 3 — 008f_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica / 005a_MED_OCC-1930-1960_cardio-semiologia-strumentale",
+    text: "Two electrocardiographic tracings, both machine in mediation, paired for compositional symmetry: one horizontal, made of many thin homogeneous lines; the other vertical, expressive in its main line, closer to square neumatic notation.",
+    left: "audio/pair3-left.mp3",
+    mix: "audio/pair3-mix.mp3",
+    right: "audio/pair3-right.mp3"
+  },
+  4: {
+    title: "Pair 4 — 025a_NOT_OCC-0850_musica-enchiriadis-daseiana / 011a_NOT_ASI-nd_yangchen-wellcome42",
+    text: "The daseian notation from the Musica enchiriadis against a leaf of Tibetan musical notation. In the daseian notation the line anticipates sampling, prefigured by a grid; in the Tibetan score it creates a continuous flow.",
+    left: "audio/pair4-left.mp3",
+    mix: "audio/pair4-mix.mp3",
+    right: "audio/pair4-right.mp3"
+  },
+  5: {
+    title: "Pair 5 — 030a_SAC_ASI-nd_hobart-rerajahan-nada / 008h_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
+    text: "Lord Nada Prenawa, the Balinese deity of divine sound, paired with a four-channel synchronized cardiac tracing. Floor installation, backlit plexiglass — placed as though it were the head of the room. Single mixed channel only.",
+    mix: "audio/pair5-mix.mp3"
+  }
+};
+
+/* ============================================================ */
+
+const intro = document.getElementById('intro');
+const enterBtn = document.getElementById('enterBtn');
+const ambientAudio = document.getElementById('ambientAudio');
+const ambientBtn = document.getElementById('ambientBtn');
+const detail = document.getElementById('detail');
+const detailTitle = document.getElementById('detailTitle');
+const detailText = document.getElementById('detailText');
+const channelsEl = document.getElementById('channels');
+const closeDetail = document.getElementById('closeDetail');
+const stations = document.querySelectorAll('.station');
+
+let activeChannels = new Map(); // btn -> Audio
+let ambientOn = false;
+
+enterBtn.addEventListener('click', () => {
+  intro.classList.add('hidden');
+  ambientAudio.volume = 0.35;
+  ambientAudio.play().then(() => {
+    ambientOn = true;
+    ambientBtn.classList.add('on');
+  }).catch(() => { /* autoplay may be blocked; user can toggle manually */ });
+});
+
+ambientBtn.addEventListener('click', () => {
+  if (ambientOn) {
+    ambientAudio.pause();
+    ambientOn = false;
+  } else {
+    ambientAudio.play();
+    ambientOn = true;
+  }
+  ambientBtn.classList.toggle('on', ambientOn);
+});
+
+function stopAllChannels() {
+  activeChannels.forEach((audio, btn) => {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.classList.remove('playing');
+  });
+  activeChannels.clear();
+}
+
+function stopSingleChannel(btn) {
+  const audio = activeChannels.get(btn);
+  if (audio) {
+    audio.pause();
+    audio.currentTime = 0;
+    btn.classList.remove('playing');
+    activeChannels.delete(btn);
+  }
+}
+
+function makeChannelBtn(label, file, isMix) {
+  const btn = document.createElement('button');
+  btn.className = 'channel-btn';
+  btn.innerHTML = `<span class="dot"></span> ${label}`;
+  btn.addEventListener('click', () => {
+    const isPlaying = activeChannels.has(btn);
+
+    if (isPlaying) {
+      // toggle off just this one
+      stopSingleChannel(btn);
+      return;
+    }
+
+    if (isMix) {
+      // mix is exclusive: stop everything else first
+      stopAllChannels();
+    } else {
+      // starting L or R: if mix is currently playing, stop it
+      channelsEl.querySelectorAll('.channel-btn').forEach(otherBtn => {
+        if (otherBtn.dataset.mix === 'true') stopSingleChannel(otherBtn);
+      });
+    }
+
+    const audio = new Audio(file);
+    audio.loop = true;
+    audio.play().catch(() => {});
+    activeChannels.set(btn, audio);
+    btn.classList.add('playing');
+  });
+  if (isMix) btn.dataset.mix = 'true';
+  return btn;
+}
+
+function openStation(id) {
+  const data = STATIONS[id];
+  if (!data) return;
+
+  stations.forEach(s => s.classList.remove('active'));
+  document.querySelector(`.station[data-station="${id}"]`).classList.add('active');
+
+  detailTitle.textContent = data.title;
+  detailText.textContent = data.text;
+
+  stopAllChannels();
+  channelsEl.innerHTML = '';
+  channelsEl.classList.toggle('single', !data.left);
+
+  if (data.left) channelsEl.appendChild(makeChannelBtn('L', data.left, false));
+  channelsEl.appendChild(makeChannelBtn('mix', data.mix, true));
+  if (data.right) channelsEl.appendChild(makeChannelBtn('R', data.right, false));
+
+  detail.classList.add('open');
+}
+
+stations.forEach(st => {
+  st.addEventListener('click', () => openStation(st.dataset.station));
+});
+
+closeDetail.addEventListener('click', () => {
+  detail.classList.remove('open');
+  stopAllChannels();
+  stations.forEach(s => s.classList.remove('active'));
+});
+</script>
+
+</body>
+</html>
