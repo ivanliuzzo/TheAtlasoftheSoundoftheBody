@@ -91,7 +91,49 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
   }
+
+  .pair.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+    background: var(--bg);
+    padding: 2rem 1.5rem;
+    max-width: 92vw;
+    max-height: 92vh;
+    overflow-y: auto;
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+  }
+
+  .zoom-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 55;
+  }
+  .zoom-backdrop.active { display: block; }
+
+  .zoom-close {
+    display: none;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    color: var(--ink-dim);
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .pair.zoomed .zoom-close {
+    display: block;
+  }
+  .zoom-close:hover { color: var(--ink); }
 
   .pair-images {
     display: flex;
@@ -116,11 +158,9 @@
     opacity: 0.85;
   }
 
-  .pair-num {
-    font-size: 0.6rem;
-    color: var(--ink-dim);
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
+  .pair.zoomed .pair-images img {
+    height: min(64vh, 520px);
+    max-width: min(45vw, 420px);
   }
 
   /* ---------- Channel buttons (outside the images) ---------- */
@@ -158,6 +198,10 @@
     background: var(--accent);
     color: #0a0a0a;
     box-shadow: 0 0 16px rgba(201, 168, 118, 0.5);
+  }
+
+  .info-btn {
+    margin-top: 0.9rem;
   }
 
   /* ---------- Description (toggled on click) ---------- */
@@ -244,10 +288,19 @@
   .intro button:hover { border-color: var(--accent); color: var(--accent); }
 
   @media (max-width: 720px) {
-    .row-mid { gap: 1.4rem; }
-    .row-bottom { gap: 0.7rem; flex-wrap: wrap; }
-    .pair-images img { height: 130px; max-width: 105px; }
-    .channel-btn { width: 38px; height: 38px; font-size: 0.55rem; }
+    .room { padding: 5rem 1rem 3rem; gap: 3.5vh; }
+    .row-mid { gap: 1.2rem; flex-wrap: wrap; row-gap: 2.5rem; }
+    .row-bottom { gap: 0.8rem; flex-wrap: wrap; row-gap: 2.5rem; }
+    .pair-images img { height: 140px; max-width: 115px; }
+    .channel-btn { width: 40px; height: 40px; font-size: 0.55rem; }
+    .pair-desc { max-width: 260px; }
+  }
+
+  @media (max-width: 420px) {
+    .pair-images img { height: 110px; max-width: 92px; }
+    .channel-btn { width: 36px; height: 36px; font-size: 0.5rem; gap: 0.7rem; }
+    .channels { gap: 0.7rem; }
+    .intro p { font-size: 0.68rem; }
   }
 </style>
 </head>
@@ -259,11 +312,11 @@
 </div>
 
 <div class="topbar">
+  <a href="index.html" class="back-link">← home</a>
   <span class="title">The Atlas of the Sound of the Body — Installation</span>
-  <button id="ambientBtn" class="ambient-toggle">
-    <span class="dot"></span> ambient
-  </button>
 </div>
+
+<div class="zoom-backdrop" id="zoomBackdrop"></div>
 
 <div class="room">
 
@@ -340,29 +393,28 @@ const STATIONS = {
 const intro = document.getElementById('intro');
 const enterBtn = document.getElementById('enterBtn');
 const ambientAudio = document.getElementById('ambientAudio');
-const ambientBtn = document.getElementById('ambientBtn');
+const zoomBackdrop = document.getElementById('zoomBackdrop');
 
 let activeChannels = new Map();
-let ambientOn = false;
+let activePairId = null;
+
+function openZoom(el) {
+  document.querySelectorAll('.pair.zoomed').forEach(p => p.classList.remove('zoomed'));
+  el.classList.add('zoomed');
+  zoomBackdrop.classList.add('active');
+}
+function closeZoom(el) {
+  el.classList.remove('zoomed');
+  zoomBackdrop.classList.remove('active');
+}
+zoomBackdrop.addEventListener('click', () => {
+  document.querySelectorAll('.pair.zoomed').forEach(p => closeZoom(p));
+});
 
 enterBtn.addEventListener('click', () => {
   intro.classList.add('hidden');
   ambientAudio.volume = 0.35;
-  ambientAudio.play().then(() => {
-    ambientOn = true;
-    ambientBtn.classList.add('on');
-  }).catch(() => {});
-});
-
-ambientBtn.addEventListener('click', () => {
-  if (ambientOn) {
-    ambientAudio.pause();
-    ambientOn = false;
-  } else {
-    ambientAudio.play();
-    ambientOn = true;
-  }
-  ambientBtn.classList.toggle('on', ambientOn);
+  ambientAudio.play().catch(() => {});
 });
 
 function stopAllChannelsIn(container) {
@@ -387,6 +439,15 @@ function stopSingle(container, btn) {
 function buildPair(id, data) {
   const el = document.getElementById(`pair-${id}`);
 
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'zoom-close';
+  closeBtn.textContent = '✕';
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeZoom(el);
+  });
+  el.appendChild(closeBtn);
+
   const imagesWrap = document.createElement('div');
   imagesWrap.className = 'pair-images';
   const imgL = document.createElement('img');
@@ -400,14 +461,13 @@ function buildPair(id, data) {
     imagesWrap.appendChild(imgR);
   }
   imagesWrap.addEventListener('click', () => {
-    el.classList.toggle('open');
+    if (el.classList.contains('zoomed')) {
+      closeZoom(el);
+    } else {
+      openZoom(el);
+    }
   });
   el.appendChild(imagesWrap);
-
-  const num = document.createElement('div');
-  num.className = 'pair-num';
-  num.textContent = id;
-  el.appendChild(num);
 
   const channelsEl = document.createElement('div');
   channelsEl.className = 'channels';
@@ -419,10 +479,19 @@ function buildPair(id, data) {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const isPlaying = activeChannels.has(btn);
+
       if (isPlaying) {
         stopSingle(activeChannels, btn);
+        if (activeChannels.size === 0) activePairId = null;
         return;
       }
+
+      // switching to a different pair: stop everything from the previous one
+      if (activePairId !== null && activePairId !== id) {
+        stopAllChannelsIn(activeChannels);
+      }
+      activePairId = id;
+
       if (isMix) {
         channelsEl.querySelectorAll('.channel-btn').forEach(b => stopSingle(activeChannels, b));
       } else {
@@ -446,10 +515,21 @@ function buildPair(id, data) {
 
   el.appendChild(channelsEl);
 
+  const infoBtn = document.createElement('button');
+  infoBtn.className = 'channel-btn info-btn';
+  infoBtn.textContent = '+';
+  el.appendChild(infoBtn);
+
   const desc = document.createElement('div');
   desc.className = 'pair-desc';
   desc.innerHTML = `<div class="desc-title">${data.title}</div><div class="desc-text">${data.text}</div>`;
   el.appendChild(desc);
+
+  infoBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = el.classList.toggle('open');
+    infoBtn.textContent = isOpen ? '−' : '+';
+  });
 }
 
 Object.entries(STATIONS).forEach(([id, data]) => buildPair(id, data));
