@@ -36,10 +36,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.4rem 1.8rem;
+    padding: 1.2rem 1.8rem;
     font-size: 0.7rem;
     letter-spacing: 0.02em;
     z-index: 50;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), rgba(10,10,10,0));
     pointer-events: none;
   }
   .topbar a, .topbar button {
@@ -67,187 +68,86 @@
   .room {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 6rem 2rem 4rem;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 3vh;
-    max-width: 1100px;
+    padding: 6rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    max-width: 980px;
     margin: 0 auto;
   }
 
   .row {
     display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .row-top    { justify-content: center; }
+  .row-mid    { justify-content: center; gap: 4rem; }
+  .row-bottom { justify-content: center; gap: 1.4rem; }
+
+  /* ---------- Pair block ---------- */
+  .pair {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-
-  .row-top {
-    justify-content: center;
-  }
-
-  .row-mid {
-    justify-content: space-between;
-    padding: 0 6%;
-  }
-
-  .row-bottom {
-    justify-content: center;
-    gap: 2.5rem;
-  }
-
-  /* ---------- Station ---------- */
-  .station {
-    position: relative;
-    width: 160px;
-    height: 210px;
-    background: #050505;
-    border: 1px solid var(--line);
-    cursor: pointer;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 1rem;
-    transition: border-color 0.4s ease, transform 0.4s ease;
     flex-shrink: 0;
   }
-  .station.plexi {
-    width: 190px;
-    height: 130px;
-    background: #0d0d0d;
-  }
-  .station:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-  .station.active {
-    border-color: var(--accent);
-  }
-  .station .num {
-    position: absolute;
-    top: 0.6rem;
-    left: 0.7rem;
-    font-size: 0.65rem;
-    color: var(--ink-dim);
-  }
-  .station .status {
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-    color: var(--ink-dim);
-    text-transform: uppercase;
-  }
-  .station.active .status {
-    color: var(--accent);
-  }
-  .station .pulse {
-    position: absolute;
-    inset: 0;
-    border: 1px solid var(--accent);
-    opacity: 0;
-  }
-  .station.active .pulse {
-    animation: pulse 2.4s ease-out infinite;
-  }
-  @keyframes pulse {
-    0%   { opacity: 0.55; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.06); }
+
+  .pair-images {
+    display: flex;
+    gap: 3px;
+    cursor: pointer;
+    background: #000;
   }
 
-  /* placeholder image slot */
-  .station img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+  .pair-images img {
+    display: block;
+    height: 190px;
+    width: auto;
+    max-width: 150px;
     object-fit: cover;
-    opacity: 0.9;
+    filter: grayscale(1) brightness(0.95);
+    transition: filter 0.4s ease, opacity 0.4s ease;
+  }
+  .pair.active .pair-images img {
+    filter: grayscale(1) brightness(1.1);
+  }
+  .pair-images:hover img {
+    opacity: 0.85;
   }
 
-  /* ---------- Detail panel ---------- */
-  .detail {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #050505;
-    border-top: 1px solid var(--line);
-    padding: 1.4rem 2rem 1.8rem;
-    transform: translateY(100%);
-    transition: transform 0.5s cubic-bezier(.19,1,.22,1);
-    z-index: 40;
-    max-height: 45vh;
-    overflow-y: auto;
-  }
-  .detail.open { transform: translateY(0); }
-
-  .detail-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .detail-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.9rem;
-    gap: 1rem;
-  }
-  .detail-head h2 {
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin: 0;
-    color: var(--ink);
-    letter-spacing: 0.01em;
-  }
-  .detail-close {
-    background: none;
-    border: none;
+  .pair-num {
+    font-size: 0.6rem;
     color: var(--ink-dim);
-    font-family: inherit;
-    font-size: 0.7rem;
-    cursor: pointer;
-    padding: 0.3rem 0.6rem;
-    flex-shrink: 0;
-  }
-  .detail-close:hover { color: var(--ink); }
-
-  .detail p {
-    font-size: 0.72rem;
-    line-height: 1.65;
-    color: #c9c6bd;
-    max-width: 68ch;
-    margin: 0 0 1.1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.05em;
   }
 
+  /* ---------- Channel buttons (outside the images) ---------- */
   .channels {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-  }
-  .channels.single {
-    justify-content: center;
+    gap: 1.1rem;
+    margin-top: 0.9rem;
   }
 
   .channel-btn {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
     background: none;
     border: 1px solid var(--line);
     color: var(--ink-dim);
     font-family: inherit;
-    font-size: 0.62rem;
-    letter-spacing: 0.05em;
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    padding: 0.9rem 1.4rem;
     cursor: pointer;
     transition: all 0.25s ease;
     border-radius: 50%;
-    width: 84px;
-    height: 84px;
-    justify-content: center;
+    width: 44px;
+    height: 44px;
   }
   .channel-btn:hover {
     border-color: var(--ink-dim);
@@ -257,23 +157,34 @@
     border-color: var(--accent);
     background: var(--accent);
     color: #0a0a0a;
-    box-shadow: 0 0 20px rgba(201, 168, 118, 0.5);
+    box-shadow: 0 0 16px rgba(201, 168, 118, 0.5);
   }
-  .channel-btn .dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.5;
+
+  /* ---------- Description (toggled on click) ---------- */
+  .pair-desc {
+    max-width: 320px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+    text-align: center;
+    margin-top: 0;
   }
-  .channel-btn.playing .dot {
-    background: #0a0a0a;
+  .pair.open .pair-desc {
+    max-height: 260px;
     opacity: 1;
-    animation: blink 1.4s ease-in-out infinite;
+    margin-top: 1rem;
   }
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+  .pair-desc .desc-title {
+    font-size: 0.65rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .pair-desc .desc-text {
+    font-size: 0.66rem;
+    line-height: 1.6;
+    color: #b8b5ac;
   }
 
   /* ---------- Ambient toggle ---------- */
@@ -292,6 +203,10 @@
     background: var(--accent);
     animation: blink 3s ease-in-out infinite;
   }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 
   /* ---------- Intro overlay ---------- */
   .intro {
@@ -309,11 +224,11 @@
   }
   .intro.hidden { opacity: 0; pointer-events: none; }
   .intro p {
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     color: var(--ink-dim);
-    max-width: 40ch;
-    line-height: 1.7;
-    margin-bottom: 2rem;
+    max-width: 46ch;
+    line-height: 1.8;
+    margin-bottom: 2.2rem;
   }
   .intro button {
     background: none;
@@ -328,18 +243,18 @@
   }
   .intro button:hover { border-color: var(--accent); color: var(--accent); }
 
-  @media (max-width: 640px) {
-    .row-mid { padding: 0 2%; }
-    .row-bottom { gap: 1rem; }
-    .station { width: 110px; height: 150px; }
-    .station.plexi { width: 140px; height: 95px; }
+  @media (max-width: 720px) {
+    .row-mid { gap: 1.4rem; }
+    .row-bottom { gap: 0.7rem; flex-wrap: wrap; }
+    .pair-images img { height: 130px; max-width: 105px; }
+    .channel-btn { width: 38px; height: 38px; font-size: 0.55rem; }
   }
 </style>
 </head>
 <body>
 
 <div class="intro" id="intro">
-  <p>Five pairs. Each juxtaposes two levels of mediation through which the sound of the body has been made visible — vocally reinterpreted by Arthur Wilkens. Sound plays through this device; headphones recommended.</p>
+  <p>The Atlas of the Sound of the Body is a research project on how cultures across history have made the sound of the human body visible — as a line. This installation presents five pairs of images, each bringing together two very different ways of drawing that sound: a medieval chant notation next to a modern heart tracing, a sacred Balinese figure next to a hospital chart. Singer Arthur Wilkens looked at each pair and turned what he saw into voice. Click a pair to read more about it, and use the three buttons below each one to listen: left image, right image, or both mixed together.</p>
   <button id="enterBtn">Enter</button>
 </div>
 
@@ -353,50 +268,19 @@
 <div class="room">
 
   <div class="row row-top">
-    <div class="station plexi" data-station="5">
-      <div class="num">5</div>
-      <div class="status">listen</div>
-      <div class="pulse"></div>
-    </div>
+    <div class="pair" data-pair="5" id="pair-5"></div>
   </div>
 
   <div class="row row-mid">
-    <div class="station" data-station="3">
-      <div class="num">3</div>
-      <div class="status">listen</div>
-      <div class="pulse"></div>
-    </div>
-    <div class="station" data-station="4">
-      <div class="num">4</div>
-      <div class="status">listen</div>
-      <div class="pulse"></div>
-    </div>
+    <div class="pair" data-pair="3" id="pair-3"></div>
+    <div class="pair" data-pair="4" id="pair-4"></div>
   </div>
 
   <div class="row row-bottom">
-    <div class="station" data-station="1">
-      <div class="num">1</div>
-      <div class="status">listen</div>
-      <div class="pulse"></div>
-    </div>
-    <div class="station" data-station="2">
-      <div class="num">2</div>
-      <div class="status">listen</div>
-      <div class="pulse"></div>
-    </div>
+    <div class="pair" data-pair="1" id="pair-1"></div>
+    <div class="pair" data-pair="2" id="pair-2"></div>
   </div>
 
-</div>
-
-<div class="detail" id="detail">
-  <div class="detail-inner">
-    <div class="detail-head">
-      <h2 id="detailTitle">—</h2>
-      <button class="detail-close" id="closeDetail">close ✕</button>
-    </div>
-    <p id="detailText">—</p>
-    <div class="channels" id="channels"></div>
-  </div>
 </div>
 
 <audio id="ambientAudio" loop preload="none">
@@ -404,43 +288,49 @@
 </audio>
 
 <script>
-/* ============================================================
-   STATION DATA — placeholders. Replace `file` paths once the
-   audio recordings and images are available. Each station has
-   three channels: left image sound, right image sound, mix.
-   ============================================================ */
+/* ============================================================ */
 const STATIONS = {
   1: {
-    title: "Pair 1 — Hand-tool grid mosaic / Machine-algorithm grid mosaic",
-    text: "Two five-by-five grids of fragments: one spanning the hand-tool tradition across medical, notational and sacred sources; the other drawing exclusively on modern clinical and instrumental material.",
+    title: "Pair 1",
+    text: "Two five-by-five grids of fragments: one spanning the hand-tool tradition across medical, notational and sacred sources — pulse diagnostics, Tibetan and Boethian notation, Lord Nada Prenawa, Bolognese antiphonaries, the daseian notation; the other drawing exclusively on modern clinical and instrumental material, from Marey to computed spirometry data.",
+    imgLeft: "images/pair1-left.jpg",
+    imgRight: "images/pair1-right.jpg",
     left: "audio/pair1-left.mp3",
     mix: "audio/pair1-mix.mp3",
     right: "audio/pair1-right.mp3"
   },
   2: {
-    title: "Pair 2 — 012b,f,i,k_MED_ASI-1368-1644_maiying-guizhi / 017_IMP_OCC-1857_scott-phonautograph",
+    title: "Pair 2",
     text: "A composed overlay of four pulse-chart figures from the Renyuan maiying guizhi against Scott's phonautograph trace, rotated to a vertical orientation. Both hand-tool in mediation; the contrast lies in visual weight — composed density against found continuity.",
+    imgLeft: "images/pair2-left.jpg",
+    imgRight: "images/pair2-right.jpg",
     left: "audio/pair2-left.mp3",
     mix: "audio/pair2-mix.mp3",
     right: "audio/pair2-right.mp3"
   },
   3: {
-    title: "Pair 3 — 008f_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica / 005a_MED_OCC-1930-1960_cardio-semiologia-strumentale",
-    text: "Two electrocardiographic tracings, both machine in mediation, paired for compositional symmetry: one horizontal, made of many thin homogeneous lines; the other vertical, expressive in its main line, closer to square neumatic notation.",
+    title: "Pair 3",
+    text: "Two electrocardiographic tracings, both machine in mediation, paired for compositional symmetry: one made of many thin homogeneous lines forming a dense pattern; the other expressive in its main line, closer to square neumatic notation than to clinical measurement.",
+    imgLeft: "images/pair3-left.jpg",
+    imgRight: "images/pair3-right.jpg",
     left: "audio/pair3-left.mp3",
     mix: "audio/pair3-mix.mp3",
     right: "audio/pair3-right.mp3"
   },
   4: {
-    title: "Pair 4 — 025a_NOT_OCC-0850_musica-enchiriadis-daseiana / 011a_NOT_ASI-nd_yangchen-wellcome42",
-    text: "The daseian notation from the Musica enchiriadis against a leaf of Tibetan musical notation. In the daseian notation the line anticipates sampling, prefigured by a grid; in the Tibetan score it creates a continuous flow.",
+    title: "Pair 4",
+    text: "The daseian notation from the Musica enchiriadis against a leaf of Tibetan musical notation. In the daseian notation the line anticipates sampling, prefigured by a grid; in the Tibetan score it creates a continuous flow carrying a feeling already sedimented, or waiting to be reawakened.",
+    imgLeft: "images/pair4-left.jpg",
+    imgRight: "images/pair4-right.jpg",
     left: "audio/pair4-left.mp3",
     mix: "audio/pair4-mix.mp3",
     right: "audio/pair4-right.mp3"
   },
   5: {
-    title: "Pair 5 — 030a_SAC_ASI-nd_hobart-rerajahan-nada / 008h_MED_OCC-1990_Dioguardi-Sanna-semeiotica-medica",
-    text: "Lord Nada Prenawa, the Balinese deity of divine sound, paired with a four-channel synchronized cardiac tracing. Floor installation, backlit plexiglass — placed as though it were the head of the room. Single mixed channel only.",
+    title: "Pair 5",
+    text: "Lord Nada Prenawa, the Balinese deity of divine sound, paired with a four-channel synchronized cardiac tracing. Floor installation, backlit plexiglass — placed as though it were the head of the room. A single mixed channel only.",
+    imgLeft: "images/pair5-left.jpg",
+    imgRight: "images/pair5-right.jpg",
     mix: "audio/pair5-mix.mp3"
   }
 };
@@ -451,14 +341,8 @@ const intro = document.getElementById('intro');
 const enterBtn = document.getElementById('enterBtn');
 const ambientAudio = document.getElementById('ambientAudio');
 const ambientBtn = document.getElementById('ambientBtn');
-const detail = document.getElementById('detail');
-const detailTitle = document.getElementById('detailTitle');
-const detailText = document.getElementById('detailText');
-const channelsEl = document.getElementById('channels');
-const closeDetail = document.getElementById('closeDetail');
-const stations = document.querySelectorAll('.station');
 
-let activeChannels = new Map(); // btn -> Audio
+let activeChannels = new Map();
 let ambientOn = false;
 
 enterBtn.addEventListener('click', () => {
@@ -467,7 +351,7 @@ enterBtn.addEventListener('click', () => {
   ambientAudio.play().then(() => {
     ambientOn = true;
     ambientBtn.classList.add('on');
-  }).catch(() => { /* autoplay may be blocked; user can toggle manually */ });
+  }).catch(() => {});
 });
 
 ambientBtn.addEventListener('click', () => {
@@ -481,88 +365,94 @@ ambientBtn.addEventListener('click', () => {
   ambientBtn.classList.toggle('on', ambientOn);
 });
 
-function stopAllChannels() {
-  activeChannels.forEach((audio, btn) => {
+function stopAllChannelsIn(container) {
+  container.forEach((audio, btn) => {
     audio.pause();
     audio.currentTime = 0;
     btn.classList.remove('playing');
   });
-  activeChannels.clear();
+  container.clear();
 }
 
-function stopSingleChannel(btn) {
-  const audio = activeChannels.get(btn);
+function stopSingle(container, btn) {
+  const audio = container.get(btn);
   if (audio) {
     audio.pause();
     audio.currentTime = 0;
     btn.classList.remove('playing');
-    activeChannels.delete(btn);
+    container.delete(btn);
   }
 }
 
-function makeChannelBtn(label, file, isMix) {
-  const btn = document.createElement('button');
-  btn.className = 'channel-btn';
-  btn.innerHTML = `<span class="dot"></span> ${label}`;
-  btn.addEventListener('click', () => {
-    const isPlaying = activeChannels.has(btn);
+function buildPair(id, data) {
+  const el = document.getElementById(`pair-${id}`);
 
-    if (isPlaying) {
-      // toggle off just this one
-      stopSingleChannel(btn);
-      return;
-    }
-
-    if (isMix) {
-      // mix is exclusive: stop everything else first
-      stopAllChannels();
-    } else {
-      // starting L or R: if mix is currently playing, stop it
-      channelsEl.querySelectorAll('.channel-btn').forEach(otherBtn => {
-        if (otherBtn.dataset.mix === 'true') stopSingleChannel(otherBtn);
-      });
-    }
-
-    const audio = new Audio(file);
-    audio.loop = true;
-    audio.play().catch(() => {});
-    activeChannels.set(btn, audio);
-    btn.classList.add('playing');
+  const imagesWrap = document.createElement('div');
+  imagesWrap.className = 'pair-images';
+  const imgL = document.createElement('img');
+  imgL.src = data.imgLeft;
+  imgL.alt = data.title + ' — left';
+  imagesWrap.appendChild(imgL);
+  if (data.imgRight) {
+    const imgR = document.createElement('img');
+    imgR.src = data.imgRight;
+    imgR.alt = data.title + ' — right';
+    imagesWrap.appendChild(imgR);
+  }
+  imagesWrap.addEventListener('click', () => {
+    el.classList.toggle('open');
   });
-  if (isMix) btn.dataset.mix = 'true';
-  return btn;
+  el.appendChild(imagesWrap);
+
+  const num = document.createElement('div');
+  num.className = 'pair-num';
+  num.textContent = id;
+  el.appendChild(num);
+
+  const channelsEl = document.createElement('div');
+  channelsEl.className = 'channels';
+
+  function makeBtn(label, file, isMix) {
+    const btn = document.createElement('button');
+    btn.className = 'channel-btn';
+    btn.textContent = label;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isPlaying = activeChannels.has(btn);
+      if (isPlaying) {
+        stopSingle(activeChannels, btn);
+        return;
+      }
+      if (isMix) {
+        channelsEl.querySelectorAll('.channel-btn').forEach(b => stopSingle(activeChannels, b));
+      } else {
+        channelsEl.querySelectorAll('.channel-btn').forEach(b => {
+          if (b.dataset.mix === 'true') stopSingle(activeChannels, b);
+        });
+      }
+      const audio = new Audio(file);
+      audio.loop = true;
+      audio.play().catch(() => {});
+      activeChannels.set(btn, audio);
+      btn.classList.add('playing');
+    });
+    if (isMix) btn.dataset.mix = 'true';
+    return btn;
+  }
+
+  if (data.left) channelsEl.appendChild(makeBtn('L', data.left, false));
+  channelsEl.appendChild(makeBtn('mix', data.mix, true));
+  if (data.right) channelsEl.appendChild(makeBtn('R', data.right, false));
+
+  el.appendChild(channelsEl);
+
+  const desc = document.createElement('div');
+  desc.className = 'pair-desc';
+  desc.innerHTML = `<div class="desc-title">${data.title}</div><div class="desc-text">${data.text}</div>`;
+  el.appendChild(desc);
 }
 
-function openStation(id) {
-  const data = STATIONS[id];
-  if (!data) return;
-
-  stations.forEach(s => s.classList.remove('active'));
-  document.querySelector(`.station[data-station="${id}"]`).classList.add('active');
-
-  detailTitle.textContent = data.title;
-  detailText.textContent = data.text;
-
-  stopAllChannels();
-  channelsEl.innerHTML = '';
-  channelsEl.classList.toggle('single', !data.left);
-
-  if (data.left) channelsEl.appendChild(makeChannelBtn('L', data.left, false));
-  channelsEl.appendChild(makeChannelBtn('mix', data.mix, true));
-  if (data.right) channelsEl.appendChild(makeChannelBtn('R', data.right, false));
-
-  detail.classList.add('open');
-}
-
-stations.forEach(st => {
-  st.addEventListener('click', () => openStation(st.dataset.station));
-});
-
-closeDetail.addEventListener('click', () => {
-  detail.classList.remove('open');
-  stopAllChannels();
-  stations.forEach(s => s.classList.remove('active'));
-});
+Object.entries(STATIONS).forEach(([id, data]) => buildPair(id, data));
 </script>
 
 </body>
